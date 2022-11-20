@@ -1,0 +1,9 @@
+.imagen{
+    filter: blur(6px)
+}
+@media (min-width: 500px) { /* si desea, cambiar tamaño de la pantalla en esta línea */
+    nav {
+        height: 80px !important;            /* Cambia el valor de lo que quieres */
+        line-height: 80x !important;       /* Cambia el valor de lo que quieres */
+    }
+}
