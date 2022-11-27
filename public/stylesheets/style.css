@@ -1,9 +1,37 @@
-.imagen{
+.imagen {
     filter: blur(6px)
 }
-@media (min-width: 500px) { /* si desea, cambiar tamaño de la pantalla en esta línea */
+
+@media (min-width: 500px) {
+
+    /* si desea, cambiar tamaño de la pantalla en esta línea */
     nav {
-        height: 80px !important;            /* Cambia el valor de lo que quieres */
-        line-height: 80x !important;       /* Cambia el valor de lo que quieres */
+        height: 80px !important;
+        /* Cambia el valor de lo que quieres */
+        line-height: 80x !important;
+        /* Cambia el valor de lo que quieres */
     }
+}
+
+.contenido {
+    padding: 30px;
+    margin: 5px;
+}
+.form{
+    margin: 15px;
+}
+
+/* label focus color */
+.input-field input:focus+label {
+    color: green !important;
+}
+
+/* label underline focus color */
+.row .input-field input:focus {
+    border-bottom: 1px solid green !important;
+    box-shadow: 0 1px 0 0 green !important
+}
+
+ul.dropdown-content.select-dropdown li span {
+    color: green;
 }
