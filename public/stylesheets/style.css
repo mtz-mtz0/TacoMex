@@ -35,3 +35,23 @@
 ul.dropdown-content.select-dropdown li span {
     color: green;
 }
+.boton{ 
+    padding-top: 10px;
+    
+  }
+
+
+  .botonDentro{
+    border-radius: 12px;
+    width: 270px;
+    height: 32px;
+    background-color: #00c853;;
+    border-width: 0px;
+  }
+
+
+  #span-1 {
+    color: white;
+    font-family:'Lucida Sans';
+    font-size: 18px;
+}

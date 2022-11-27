@@ -7,6 +7,12 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'TacoMex' });
 });
 
+/* GET home page(registro.ejs)*/
+router.get('/views/Usuario/registro', function(req, res, next) {
+  res.render('../views/Usuario/registro', { title: 'registro' });
+}); 
+
+
 /* GET home page(sobreNosotros.ejs)*/
 router.get('/views/Principal/sobreNosotros', function(req, res, next) {
   res.render('../views/Principal/sobreNosotros', { title: 'Sobre nosotros' });
@@ -16,6 +22,7 @@ router.get('/views/Principal/sobreNosotros', function(req, res, next) {
 router.get('/views/Principal/menu', function(req, res, next) {
   res.render('../views/Principal/menu', { title: 'Menu' });
 });
+
 
 router.get('/views/Administrador/Productos', productosController.productos);
 
