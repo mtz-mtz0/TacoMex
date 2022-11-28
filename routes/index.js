@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 
 /* GET home page(registro.ejs)*/
 router.get('/views/Usuario/registro', function(req, res, next) {
-  res.render('../views/Usuario/registro', { title: 'registro' });
+  res.render('../views/Usuario/registro', { title: 'Registro de usuario' });
 }); 
 
 
@@ -22,6 +22,14 @@ router.get('/views/Principal/sobreNosotros', function(req, res, next) {
 router.get('/views/Principal/menu', function(req, res, next) {
   res.render('../views/Principal/menu', { title: 'Menu' });
 });
+
+
+
+/* GET home page(registro.ejs)*/
+router.get('/views/Usuario/registro_direccion', function(req, res, next) {
+  res.render('../views/Usuario/registro_direccion', { title: 'Registro de dirección' });
+}); 
+
 
 
 router.get('/views/Administrador/Productos', productosController.productos);
