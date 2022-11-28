@@ -35,6 +35,11 @@ router.get('/views/Usuario/inicio_sesion', function(req, res, next) {
   res.render('../views/Usuario/inicio_sesion', { title: 'Inicio de sesión' });
 }); 
 
+/* GET home page(registro_direccion.ejs)*/
+router.get('/views/EditarDatos/editarDireccion', function(req, res, next) {
+  res.render('../views/EditarDatos/editarDireccion', { title: 'Inicio de sesión' });
+});
+
 
 router.get('/views/Administrador/Productos', productosController.productos);
 
