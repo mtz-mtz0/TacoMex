@@ -25,11 +25,15 @@ router.get('/views/Principal/menu', function(req, res, next) {
 
 
 
-/* GET home page(registro.ejs)*/
+/* GET home page(registro_direccion.ejs)*/
 router.get('/views/Usuario/registro_direccion', function(req, res, next) {
   res.render('../views/Usuario/registro_direccion', { title: 'Registro de dirección' });
 }); 
 
+/* GET home page(registro_direccion.ejs)*/
+router.get('/views/Usuario/inicio_sesion', function(req, res, next) {
+  res.render('../views/Usuario/inicio_sesion', { title: 'Inicio de sesión' });
+}); 
 
 
 router.get('/views/Administrador/Productos', productosController.productos);
