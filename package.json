@@ -27,6 +27,7 @@
     "install": "^0.13.0",
     "mongoose": "^6.7.4",
     "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
     "rimraf": "^3.0.2",
     "sequelize": "^6.25.8"
   }
