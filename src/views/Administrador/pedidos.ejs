@@ -1,0 +1,65 @@
+<%- include("../Administrador/headerAdmin.ejs") -%>
+    <div class="contenido">
+        <div class="row">
+            <br>
+            <div class="col s12 m9">
+                <h5 class=" grey-text text-darken-3 center">Pedidos</h5>
+                <table class="highlight  responsive-table border=1">
+                    <thead class="orange accent-4 white-text">
+                        <tr>
+                            <th>N° Pedido</th>
+                            <th>Fecha</th>
+                            <th>Total</th>
+                            <th>Cantidad</th>
+                            <th>Repartidor</th>
+                            <th>Estatus</th>
+                            <th>Detalles</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>15151</td>
+                            <td>11/11/2022</td>
+                            <td>$120.87</td>
+                            <td>5</td>
+                            <td>Fulano</td>
+                            <td>Pendiente</td>
+                            <th><a class="waves-effect waves-light btn-small light-green accent-4">Detalle</a></th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+            <div class="col s12 m3">
+                <h5 class="center grey-text text-darken-3">Detalle de Producto</h5>
+                <form action="" class="form">
+                    <div class="row">
+                        <div class="input-field col s6 m12">
+                            <br>
+                            <label>Producto</label>
+                            <br>
+                        </div>
+                        <div class="input-field col s4 m6">
+                            <select equired>
+                                <option value="1">Preparando</option>
+                                <option value="2">En camino</option>                            
+                            </select>
+                        </div>
+                        <div class="input-field col s4 m6 ">
+                            <select required>
+                                <option value="1">fulano</option>
+                            </select>
+                        </div>
+                        <div class="col s12 m12 center white-text">
+                            <button class="btn waves-effect waves-light green" type="submit"
+                                name="action">Actualizar Estado</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <%- include("../Comunes/footer.ejs") -%>

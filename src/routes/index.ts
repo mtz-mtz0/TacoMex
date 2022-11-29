@@ -23,7 +23,15 @@ router.get('/views/Principal/menu', function(req, res, next) {
   res.render('../views/Principal/menu', { title: 'Menu' });
 });
 
+/* GET home page(Productos.ejs)*/
+router.get('/views/Administrador/Productos', function(req, res, next) {
+  res.render('../views/Administrador/Productos', { title: 'Productos' });
+});
 
+/* GET home page(Productos.ejs)*/
+router.get('/views/Administrador/pedidos', function(req, res, next) {
+  res.render('../views/Administrador/pedidos', { title: 'Pedidos' });
+});
 
 /* GET home page(registro_direccion.ejs)*/
 router.get('/views/Usuario/registro_direccion', function(req, res, next) {

@@ -39,28 +39,26 @@
                 <form action="" class="form">
                     <div class="row">
                         <div class="input-field col s6 m12">
-                            <input id="Nombre" type="text" maxlength="40">
+                            <input id="Nombre" type="text" maxlength="40" class="validate" required>
                             <label for="Nombre">Nombre</label>
                         </div>
                         <div class="input-field col s6 m12">
-                            <input id="Descripcion" type="text" maxlength="100"></textarea>
+                            <input id="Descripcion" type="text" maxlength="100" class="validate" required></textarea>
                             <label for="Descripcion">Descripción</label>
                         </div>
                         <div class="input-field col s4 m6">
-                            <input id="Precio" type="number" max="6">
+                            <input id="Precio" type="number" max="10000" class="validate" required>
                             <label for="Precio">Precio</label>
                         </div>
                         <div class="input-field col s4 m6">
-                            <select>
-                                <option value="" disabled selected>Categoria</option>
+                            <select equired>
                                 <option value="1">Tacos</option>
                                 <option value="2">Bebidas</option>
                                 <option value="3">Otros</option>
                             </select>
                         </div>
                         <div class="input-field col s4 m12 ">
-                            <select>
-                                <option value="" disabled selected>Estatus</option>
+                            <select required>
                                 <option value="1">Disponible</option>
                                 <option value="2">No disponible</option>
                             </select>
@@ -68,10 +66,10 @@
                         <div class="file-field input-field col s12 m12">
                             <div class="btn grey lighten-5 grey-text ">
                                 <span>Imagen</span>
-                                <input type="file">
+                                <input type="file" class="validate" required>
                             </div>
                             <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text">
+                                <input class="file-path validate" type="text" class="validate" required>
                             </div>
                         </div>
                         <div class="col s12 m12 center white-text">
