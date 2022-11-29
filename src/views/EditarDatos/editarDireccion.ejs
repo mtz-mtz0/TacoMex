@@ -1,0 +1,96 @@
+<%- include("../Comunes/header.ejs") -%>
+   
+    <div class="row">
+      <h2 class="header center black-text">Editar dirección</h2>
+
+      
+  
+        <div class="col s12 m4">
+          
+            <a href="#" class="grey-text text-darken-2 center"><img class="responsive-img"
+                    src="https://cdn-icons-png.flaticon.com/512/149/149071.png"></a>
+        </div>
+
+
+
+        <div class="col s12 m8">
+
+            
+     <div class="col s12 m5">     
+    <form class="col s15" action="nombreserver/api/create" method="post">
+         <div class="row">
+
+    
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="postal" type="text" class="validate" required>
+          <label for="postal">Código Postal</label>
+        </div>
+
+        <div class="input-field col s12">
+          <input id="estado" type="text" class="validate" required>
+          <label for="estado">Estado</label>
+        </div>
+
+    
+        <div class="input-field col s12">
+            <input id="colonia" type="text" class="validate" required>
+            <label for="colonia">Colonia</label>
+          </div>
+
+      </div>
+      
+
+  </div>
+</div>
+
+
+   <div class="col s18 m4">
+
+    <div class="input-field col s12">
+      <input id="calle" type="text" class="validate" required>
+      <label for="calle">Calle</label>
+    </div>
+      
+    <div class="input-field col s12">
+      <input id="numexterior" type="text" class="validate" 
+     required>
+      <label for="numexterior">Número exterior</label>
+    </div>
+
+    <div class="input-field col s12">
+      <input id="numinterior" type="text" class="validate" 
+     required>
+      <label for="numinterior">Número interior</label>
+    </div>
+
+
+  </div>
+  
+  <div class="col s4 m4">
+    <div class="boton" >
+        <button class="botonDentro" type="submit" name="registro" id="1"  required>           
+            <span id="span-1">GUARDAR</span>
+        </button>
+        </div>
+     </div>
+
+      </div>
+
+      
+        
+    </div>
+   </form>
+
+
+<br>
+
+               
+
+
+      
+
+
+
+
+    <%- include("../Comunes/footer.ejs") -%>
