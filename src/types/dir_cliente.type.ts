@@ -1,5 +1,5 @@
 export default interface Dir_clienteType {
-    id_direccion_cli?: number;
-    id_cliente_dir?: number;
-    num_dir_cli: number;
+    Direccion_id_Direccion?: number;
+    Cliente_id_cliente?: number;
+    num_dir_cli?: number;
   }

@@ -1,9 +1,9 @@
 export default interface ProductosType {
-    idProducto?: number;
+    id_Producto?: number;
     nombre_pro?: string;
     descripcion_pro?: string;
     id_fotografia?: number;
-    precio?: number;
+    precio_pro?: number;
     categoria_pro?: string;
     estatus_pro?: string;
 }

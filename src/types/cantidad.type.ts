@@ -1,5 +1,5 @@
 export default interface CantidadType {
-    num_pedido_can?: number;
-    id_producto_can?: number;
-    cantidad_can: number;
+    Pedido_num_pedido?: number;
+    Producto_id_Producto?: number;
+    cantidad_can?: number;
 }

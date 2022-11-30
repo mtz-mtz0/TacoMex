@@ -6,7 +6,6 @@ export default interface ClienteType {
     sexo_cli?:string;
     fecha_nac?:Date;
     telefono?:string;
-    idUsuario?: number;
     id_usuario_cli?:number;
     num_pedido_cli?:number;
     id_fotografia_cli?:number;

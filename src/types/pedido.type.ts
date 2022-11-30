@@ -5,5 +5,5 @@ export default interface PedidoType {
 	montoTotal_ped?: string;
 	estatus_ped?: string;
 	id_local_ped?: number;
-	id_repartidor_ped?: number;
+	Repartidor_id_repartidor?: number;
 }
