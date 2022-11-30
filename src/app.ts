@@ -2,6 +2,8 @@ import express from 'express';
 import morgan from 'morgan';
 import path from 'path';
 import indexRouter from "./routes/index";
+import UserRouter from "./routes/usuarios"
+
 import cors from 'cors';
 
 
@@ -11,10 +13,9 @@ import sequelize  from './db/connection' ;
 class Application{
 
     app: express.Application;
+
     private apiPath ={
       usuarios:'/api/usuarios'
-
-
     }
 
     constructor(){
@@ -60,7 +61,9 @@ this.app.use(express.static('public'));
 
 routes(){
     this.app.use("/", indexRouter);
-    this.app.use(this.apiPath.usuarios, indexRouter)}
+    this.app.use(this.apiPath.usuarios, UserRouter);
+  
+  }
 
 
 

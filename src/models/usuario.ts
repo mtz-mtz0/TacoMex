@@ -2,9 +2,7 @@ import { DataTypes, Model } from "sequelize";
 import db from '../db/connection';
 import UsuarioType from "../types/usuario.type";
 
-export class UsuarioModel extends Model<UsuarioType>{
-
-}
+//export class UsuarioModel extends Model<UsuarioType>{}
 
 
 const Usuario=db.define('Usuario', {
@@ -39,3 +37,5 @@ const Usuario=db.define('Usuario', {
     }
 
 );
+
+export default Usuario;

@@ -1,13 +1,14 @@
 import { Router, Request, Response } from "express";
+import { getUsuario, getUsuarios } from "../controllers/usuario";
 
 const router = Router();
 
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'TacoMex' });
-});
+  res.render('index', { title: 'TacoMex' });});
 
 /*---------------------------------Usuario-----------------------------------*/
+
 
 /* GET home page(iniciar sesion.ejs)*/
 router.get('/views/Usuario/inicio_sesion', function(req, res, next) {
