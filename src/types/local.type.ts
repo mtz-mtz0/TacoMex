@@ -1,5 +1,4 @@
 export default interface LocalType {
-
     id_local?: number;
 	nombre_loc?: string;
 	id_direccion_loc?: number;

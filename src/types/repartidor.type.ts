@@ -3,6 +3,6 @@ export default interface RepartidorType {
     nombre_rep?: string;
     apellidoP_rep?: string;
     apellidoM_rep?: string;
-    id_fotografia?: number;
-    id_usuario?: number;
+    id_fotografia_rep?: number;
+    id_usuario_rep?: number;
   }
