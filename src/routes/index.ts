@@ -12,7 +12,7 @@ router.get('/views/Usuario/registro', function(req, res, next) {
   res.render('../views/Usuario/registro', { title: 'Registro de usuario' });
 }); 
 
-
+/*---------------------------------PRINCIPAL-----------------------------------*/
 /* GET home page(sobreNosotros.ejs)*/
 router.get('/views/Principal/sobreNosotros', function(req, res, next) {
   res.render('../views/Principal/sobreNosotros', { title: 'Sobre nosotros' });
