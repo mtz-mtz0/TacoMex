@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>
+    <%=title%>
+  </title>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <nav>
+    <div class=" white nav-wrapper">
+      <div class="container">
+        <a href="#" class="brand-logo grey-text text-darken-2 "><img width="80px"
+            src="https://static.vecteezy.com/system/resources/previews/004/026/483/original/italy-flag-mexican-chef-mascot-holding-a-taco-vector.jpg"></a>
+        <a href="#" data-target="menu-responsive" class="sidenav-trigger "><i
+            class="material-icons grey-text text-darken-2 ">menu</i></a>
+      </div>
+      <div class="container">
+        <ul class="right hide-on-med-and-down">
+          <li><a class="grey-text text-darken-2" href="../repartidor/entregas">Entregas</a></li>
+          <li><a class="waves-effect waves-light btn white grey-text text-darken-2">Cerrar sesion</a></li>
+        </ul>
+        <ul class="sidenav" id="menu-responsive">
+            <li><h2></h2> </li>
+            <li><a class="grey-text text-darken-2" href="../repartidor/entregas">Entregas</a></li>
+            <li><a class="waves-effect waves-light btn white grey-text text-darken-2">Cerrar sesion</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <div class="contenido">
+        <div class="row">
+            <br>
+            <div class="col s12 m12">
+                <h5 class=" grey-text text-darken-3 center">Entregas</h5>
+                <table class="highlight  responsive-table border=1">
+                    <thead class="orange accent-4 white-text">
+                        <tr>
+                            <th>N° Pedido</th>
+                            <th>Fecha</th>
+                            <th>Total</th>
+                            <th>Cantidad</th>
+                            <th>Usuario</th>
+                            <th>Dirección</th>
+                            <th>Estatus</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>15151</td>
+                            <td>11/11/2022</td>
+                            <td>$120.87</td>
+                            <td>5</td>
+                            <td>Fulano</td>
+                            <td>Preparando</td>
+                            <td>
+                                <select required>
+                                    <option value="1">Preparando</option>
+                                    <option value="2">En camino</option>
+                                    <option value="2">Entregado</option>
+                                    <option value="2">No entregado</option>
+                                </select>
+                            </td>
+                            <td>
+                                <a class="waves-effect waves-light btn-small light-green accent-4">guardar estatus</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <%- include("../Comunes/footer.ejs") -%>

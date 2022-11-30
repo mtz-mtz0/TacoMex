@@ -62,5 +62,12 @@ router.get('/views/Administrador/pedidos', function(req, res, next) {
   res.render('../views/Administrador/pedidos', { title: 'Pedidos' });
 });
 
+/*---------------------------------Repartidor-----------------------------------*/
+
+/* GET home page(Productos.ejs)*/
+router.get('/views/repartidor/entregas', function(req, res, next) {
+  res.render('../views/repartidor/entregas', { title: 'Entregas' });
+});
+
 
 export default router;
