@@ -1,8 +1,9 @@
 import {Sequelize}from 'sequelize';
 
-const db= new Sequelize('tacomex','root','password',{
+const db= new Sequelize('tacomex','root','MYbd_12345',{
 host:'localhost',
-dialect:'mysql'
+dialect:'mysql',
+port: 3307,
 //logging: false,
 });
 
