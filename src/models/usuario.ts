@@ -25,7 +25,7 @@ const Usuario=db.define('Usuario', {
   
       tipo_us:{
         type: DataTypes.STRING(30),
-        allowNull: false,
+       allowNull: false,
       }
 
     },
