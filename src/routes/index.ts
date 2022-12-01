@@ -7,6 +7,7 @@ const router = Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'TacoMex' });});
 
+  
 /*---------------------------------Usuario-----------------------------------*/
 
 
@@ -39,6 +40,14 @@ router.get('/views/editarDatos/editarDatos', function(req, res, next) {
 router.get('/views/EditarDatos/editarDireccion', function(req, res, next) {
   res.render('../views/EditarDatos/editarDireccion', { title: 'Inicio de sesión' });
 });
+
+/* GET home page(editar_usuarios ejs)*/
+router.get('/views/EditarDatos/editarUsuarios', function(req, res, next) {
+  res.render('../views/EditarDatos/editarUsuarios', { title: 'Inicio de sesión' });
+});
+
+
+
 
 /*---------------------------------PRINCIPAL-----------------------------------*/
 /* GET home page(sobreNosotros.ejs)*/

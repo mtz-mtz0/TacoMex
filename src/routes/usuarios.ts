@@ -2,12 +2,15 @@ import { Router } from "express";
 import { getUsuarios,getUsuario, postUsuario, deleteUsuario } from "../controllers/usuario";
 
 
-const router=Router();
+const Usuariorouter=Router();
 
-router.get('/',getUsuarios);
-router.get('/:id',getUsuario);
-router.post('/',postUsuario);
-router.put('/:id', getUsuarios);
-router.delete('/:id',deleteUsuario);
 
-export default router;
+/* GET home page(editar_usuarios ejs)*/
+
+Usuariorouter.get('/',getUsuarios);
+Usuariorouter.get('/:id',getUsuario);
+Usuariorouter.post('/',postUsuario);
+Usuariorouter.put('/:id', getUsuarios);
+Usuariorouter.delete('/:id',deleteUsuario);
+
+export default Usuariorouter;
