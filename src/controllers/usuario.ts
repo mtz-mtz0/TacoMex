@@ -53,7 +53,7 @@ export const getUsuario =async (req: Request,res: Response) =>{
 
 
 
-///falta corregir el put  --- actualizar registros
+///corregio el actualizar registros
     export const putUsuario = async(req: Request,res: Response) =>{
         const{id}= req.params;
         const{body}= req;

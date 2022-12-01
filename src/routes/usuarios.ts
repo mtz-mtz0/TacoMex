@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getUsuarios,getUsuario, postUsuario, deleteUsuario } from "../controllers/usuario";
+import { getUsuarios,getUsuario, postUsuario, deleteUsuario,putUsuario } from "../controllers/usuario";
 
 
 const Usuariorouter=Router();
@@ -10,7 +10,7 @@ const Usuariorouter=Router();
 Usuariorouter.get('/',getUsuarios);
 Usuariorouter.get('/:id',getUsuario);
 Usuariorouter.post('/',postUsuario);
-Usuariorouter.put('/:id', getUsuarios);
+Usuariorouter.put('/:id', putUsuario);
 Usuariorouter.delete('/:id',deleteUsuario);
 
 export default Usuariorouter;
