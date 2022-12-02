@@ -2,6 +2,7 @@ import { DataTypes, Model } from "sequelize";
 import db from '../db/connection';
 import ClienteType from "../types/cliente.type";
 import Fotografia from "./fotografia";
+import Pedido from "./pedido";
 import Usuario from "./usuario";
 
 //export class ClienteModel extends Model<ClienteType>{}
