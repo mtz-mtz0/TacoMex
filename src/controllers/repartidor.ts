@@ -4,7 +4,7 @@ import {RepartidorModel} from "../models/repartidor";
 /* GET home page(editar_usuarios ejs)*/
 
 
-  export async function indexViewDireccion(req: Request, res: Response) {
+  export async function indexViewRepartidor(req: Request, res: Response) {
     return res.render('../views/repartidor/repartidor-view');
   }
 
