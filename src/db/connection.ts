@@ -10,4 +10,4 @@ port: 3306,
 //logging: false,
 });
 
-export default sequelize;
+export default sequelize; 
