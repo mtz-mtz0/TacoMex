@@ -3,6 +3,7 @@ import db from '../db/connection';
 import ClienteType from "../types/cliente.type";
 import Fotografia from "./fotografia";
 import Usuario from "./usuario";
+import Pedido from "./pedido";
 
 //export class ClienteModel extends Model<ClienteType>{}
 
@@ -55,7 +56,7 @@ const Cliente = db.define('Cliente', {
 },
   {
     timestamps: false,//Para que no se agreguen los campos CreateAt ni UpdateAt
-    tableName: "cleinte",
+    tableName: "cliente",
   }
 );
 export default Cliente;

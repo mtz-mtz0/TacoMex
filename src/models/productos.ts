@@ -1,6 +1,6 @@
 import { DataTypes, Model } from "sequelize";
 import db from '../db/connection';
-import ProductoType from "../types/producto.type";
+import ProductoType from "../types/Producto.type";
 import Fotografia from "./fotografia";
 
 //export class UsuarioModel extends Model<UsuarioType>{}

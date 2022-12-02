@@ -14,10 +14,6 @@ class Application{
 
     app: express.Application;
 
-    private apiPath ={
-      usuarios:'/api/usuarios'
-    }
-
     constructor(){
         this.app= express();
         this.settings();
@@ -63,7 +59,7 @@ this.app.use(express.static('public'));
 
 routes(){
     this.app.use("/", indexRouter);
-    this.app.use(this.apiPath.usuarios, UserRouter);
+    this.app.use('/api/usuarios', UserRouter);
   
   }
 
