@@ -1,57 +1,56 @@
 import { DataTypes, Model } from "sequelize";
-import db from '../db/connection';
+import sequelize from "../db/connection";
+import db from "../db/connection";
 import LocalType from "../types/local.type";
-import Direccion from "./direccion";
-import Usuario from "./usuario";
+import { DireccionModel } from "./direccion";
+import { UsuarioModel } from "./usuario";
 
 //export class UsuarioModel extends Model<UsuarioType>{}
+export class LocalModel extends Model<LocalType> {}
 
-
-const Local=db.define('Local', {
-    id_Local: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-        allowNull: false,
+LocalModel.init( 
+  {
+   id_Local:{
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+     
     },
-    nombre_Loc: {
-        type: DataTypes.STRING(45),
-        allowNull: false,
-      },
-
-      id_direccion_loc: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-  
-      telefono_loc:{
-        type: DataTypes.STRING(20),
-        allowNull: false,
-      },
-
-      id_usuario_loc: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      }
-
+    nombre_loc: {
+      type: DataTypes.STRING(45),
+      allowNull: false,
     },
-    {       
-            timestamps: false,//Para que no se agreguen los campos CreateAt ni UpdateAt
-            tableName: "local",
 
+    telefono_loc: {
+      type: DataTypes.STRING(20),
+      allowNull: false,
+    },
 
-    }
+    id_direccion_loc: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
 
+   
+
+    id_usuario_loc: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+  },
+  {
+    sequelize,
+    timestamps: false, //Para que no se agreguen los campos CreateAt ni UpdateAt
+    tableName: "local",
+  }
 );
 
-export default Local;
+LocalModel.hasMany(DireccionModel, {
+  foreignKey: "id_direccion_loc",
+  sourceKey: "id_direccion",
+});
 
-Local.hasMany(Direccion,{
-    foreignKey:"id_direccion_loc",
-    sourceKey:"id_direccion"
-  });
-  
-  Local.hasMany(Usuario,{
-    foreignKey:"id_usuario_loc",
-    sourceKey:"id_usuario"
-  });
+LocalModel.hasMany(UsuarioModel, {
+  foreignKey: "id_usuario_loc",
+  sourceKey: "id_usuario",
+});

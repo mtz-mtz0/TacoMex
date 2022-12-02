@@ -1,11 +1,11 @@
 import { DataTypes, Model } from "sequelize";
-import db from '../db/connection';
+import sequelize from '../db/connection';
 import UsuarioType from "../types/usuario.type";
 
-//export class UsuarioModel extends Model<UsuarioType>{}
+export class UsuarioModel extends Model<UsuarioType>{}
 
-
-const Usuario=db.define('Usuario', {
+UsuarioModel.init( 
+{
     id_usuario: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -29,7 +29,7 @@ const Usuario=db.define('Usuario', {
       }
 
     },
-    {       
+    {       sequelize,
             timestamps: false,//Para que no se agreguen los campos CreateAt ni UpdateAt
             tableName: "usuario",
 
@@ -37,5 +37,3 @@ const Usuario=db.define('Usuario', {
     }
 
 );
-
-export default Usuario;

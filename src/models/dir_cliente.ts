@@ -1,16 +1,17 @@
 import { DataTypes, Model } from "sequelize";
-import db from '../db/connection';
+import sequelize from '../db/connection';
 import Dir_clienteType from "../types/dir_cliente.type";
-import Cliente from "./cliente";
+import {ClienteModel} from "./cliente";
 import {DireccionModel} from "./direccion";
 
 
-//export class ClienteModel extends Model<ClienteType>{}
+export class dir_clienteModel extends Model<Dir_clienteType>{}
 
 /**
  * Tabla clientes
  */
-const Dir_cliente = db.define('Cliente', {
+ dir_clienteModel.init(
+{
   Direccion_id_Direccion: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -25,21 +26,20 @@ const Dir_cliente = db.define('Cliente', {
     allowNull: false,
   }
 },
-  {
+  { sequelize,
     timestamps: false,//Para que no se agreguen los campos CreateAt ni UpdateAt
     tableName: "dir_cliente",
   }
 );
-export default Dir_cliente;
 
 //ProveedoresModel.hasMany(ProductosModel,{foreignKey:"id_Proveedor"});
 //ProductosModel.belongsTo(ProveedoresModel,{foreignKey:"id_Proveedor"});
 
-Dir_cliente.hasMany(Cliente, {
+dir_clienteModel.hasMany(ClienteModel, {
   foreignKey: "Cliente_id_cliente",
   sourceKey: "id_cliente"
 });
-Dir_cliente.hasMany(DireccionModel, {
+dir_clienteModel.hasMany(DireccionModel, {
   foreignKey: "Direccion_id_Direccion",
   sourceKey: "id_direccion"
 });

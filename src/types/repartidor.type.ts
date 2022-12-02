@@ -5,4 +5,5 @@ export default interface RepartidorType {
     apellidoM_rep?: string;
     id_fotografia_rep?: number;
     id_usuario_rep?: number;
+    estatus_rep?:string;
   }
