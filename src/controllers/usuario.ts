@@ -1,6 +1,13 @@
 import { Request, Response } from "express";
 import Usuario from "../models/usuario";
 
+/* GET home page(editar_usuarios ejs)*/
+
+
+  export async function indexViewUsuario(req: Request, res: Response) {
+    return res.render('../views/Usuario/usuario-view');
+  }
+
 
 //muestra todos los usuarios
 export const getUsuarios = async(req: Request,res: Response) =>{
@@ -94,5 +101,7 @@ export const getUsuario =async (req: Request,res: Response) =>{
             await usuario.destroy();
              res.json(usuario);
              }
+
+
 
         

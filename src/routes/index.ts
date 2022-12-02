@@ -41,10 +41,9 @@ router.get('/views/EditarDatos/editarDireccion', function(req, res, next) {
   res.render('../views/EditarDatos/editarDireccion', { title: 'Inicio de sesión' });
 });
 
-/* GET home page(editar_usuarios ejs)*/
-router.get('/views/EditarDatos/editarUsuarios', function(req, res, next) {
-  res.render('../views/EditarDatos/editarUsuarios', { title: 'Inicio de sesión' });
-});
+
+
+
 
 
 
