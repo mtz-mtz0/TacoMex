@@ -4,7 +4,7 @@ export default interface DireccionType {
     estado_dir?: string;
     colonia_dir?: string;
     calle_dir?: string;
-    numeroExterior_dir?: number;
+    numExterior_dir?: number;
     numInterior_dir?: number;
   }
   

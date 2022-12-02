@@ -1,8 +1,11 @@
 import express from 'express';
 import morgan from 'morgan';
 import path from 'path';
+
 import indexRouter from "./routes/index";
 import UserRouter from "./routes/usuarios"
+import Direccionrouter from './routes/direccion';
+
 
 import cors from 'cors';
 
@@ -60,6 +63,7 @@ this.app.use(express.static('public'));
 routes(){
     this.app.use("/", indexRouter);
     this.app.use('/api/usuarios', UserRouter);
+    this.app.use("/api/direccion",Direccionrouter);
   
   }
 

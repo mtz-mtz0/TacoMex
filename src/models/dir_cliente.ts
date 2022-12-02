@@ -2,7 +2,7 @@ import { DataTypes, Model } from "sequelize";
 import db from '../db/connection';
 import Dir_clienteType from "../types/dir_cliente.type";
 import Cliente from "./cliente";
-import Direccion from "./direccion";
+import {DireccionModel} from "./direccion";
 
 
 //export class ClienteModel extends Model<ClienteType>{}
@@ -39,7 +39,7 @@ Dir_cliente.hasMany(Cliente, {
   foreignKey: "Cliente_id_cliente",
   sourceKey: "id_cliente"
 });
-Dir_cliente.hasMany(Direccion, {
+Dir_cliente.hasMany(DireccionModel, {
   foreignKey: "Direccion_id_Direccion",
   sourceKey: "id_direccion"
 });

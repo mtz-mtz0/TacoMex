@@ -1,11 +1,12 @@
 import { DataTypes, Model } from "sequelize";
-import db from '../db/connection';
+import {sequelize} from '../db/connection';
 import DireccionType from "../types/direccion.type";
 
-//export class UsuarioModel extends Model<UsuarioType>{}
 
+export class DireccionModel extends Model<DireccionType>{}
 
-const Direccion=db.define('Direccion', {
+DireccionModel.init(
+{
     id_Direccion: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -41,7 +42,7 @@ const Direccion=db.define('Direccion', {
       
 
     },
-    {       
+    {      sequelize,
             timestamps: false,//Para que no se agreguen los campos CreateAt ni UpdateAt
             tableName: "direccion",
 
@@ -50,4 +51,3 @@ const Direccion=db.define('Direccion', {
 
 );
 
-export default Direccion;
