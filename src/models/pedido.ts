@@ -2,7 +2,7 @@ import { DataTypes, Model } from "sequelize";
 import sequelize from "../db/connection";
 import PedidoType from "../types/pedido.type";
 import {LocalModel} from "./local";
-import Repartidor from "./repartidor";
+import RepartidorModel from "./repartidor";
 
 export class PedidoModel extends Model<PedidoType>{}
 
@@ -54,7 +54,7 @@ PedidoModel.hasMany(LocalModel, {
   sourceKey: "id_local",
 });
 
-PedidoModel.hasMany(Repartidor, {
+PedidoModel.hasMany(RepartidorModel, {
   foreignKey: "Repartidor_id_repartidor",
   sourceKey: "id_repartidor",
 });
