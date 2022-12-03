@@ -59,11 +59,11 @@ RepartidorModel.init(
 export default RepartidorModel;
 
 RepartidorModel.hasMany(FotografiaModel, {
-  foreignKey: "id_fotografia_rep",
-  sourceKey: "id_fotografia"
+  foreignKey: "id_fotografia",
+  sourceKey: "id_fotografia_rep"
 });
 
 RepartidorModel.hasMany(UsuarioModel, {
-  foreignKey: "id_usuario_rep",
-  sourceKey: "id_usuario"
+  foreignKey: "id_usuario",
+  sourceKey: "id_usuario_rep"
 });

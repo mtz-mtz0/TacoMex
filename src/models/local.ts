@@ -45,12 +45,14 @@ LocalModel.init(
   }
 );
 
-LocalModel.hasOne(DireccionModel, {
-  foreignKey: "id_direccion_loc",
-  sourceKey: "id_Direccion",
+LocalModel.hasMany(DireccionModel, {
+  foreignKey: "id_Direccion",
+  sourceKey: "id_direccion_loc",
 });
 
+
+
 LocalModel.hasMany(UsuarioModel, {
-  foreignKey: "id_usuario_loc",
-  sourceKey: "id_usuario",
+  foreignKey: "id_usuario",
+  sourceKey: "id_usuario_loc",
 });

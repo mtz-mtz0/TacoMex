@@ -49,10 +49,7 @@ import { UsuarioModel } from "./usuario";
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    num_pedido_cli: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
+    
     id_fotografia_cli: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -71,18 +68,17 @@ import { UsuarioModel } from "./usuario";
 //ProductosModel.belongsTo(ProveedoresModel,{foreignKey:"id_Proveedor"});
 
 ClienteModel.hasOne(UsuarioModel, {
-  foreignKey: "id_usuario_cli",
-  sourceKey: "id_usuario"
+  foreignKey: "id_usuario",
+  sourceKey: "id_usuario_cli"
 });
 
-ClienteModel.hasMany(PedidoModel, {
-  foreignKey: "num_pedido_cli",
-  sourceKey: "num_pedido"
-});
 
 
 ClienteModel.hasOne(FotografiaModel, {
-  foreignKey: "id_fotografia_cli",
-  sourceKey: "id_fotografia"
+  foreignKey: "id_fotografia",
+  sourceKey: "id_fotografia_cli"
 
 });
+
+
+

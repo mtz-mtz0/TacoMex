@@ -66,9 +66,9 @@ routes(){
     this.app.use("/", indexRouter);
   //  this.app.use('/api/usuarios', UserRouter);
     this.app.use("/api/direccion",Direccionrouter);
- //  this.app.use("/api/cliente",Clienterouter);
-//   this.app.use("/api/repartidor",Repartidorrouter);
-  //  this.app.use("/api/producto",Productorouter);
+   this.app.use("/api/cliente",Clienterouter);
+   this.app.use("/api/repartidor",Repartidorrouter);
+   this.app.use("/api/producto",Productorouter);
 
   }
 

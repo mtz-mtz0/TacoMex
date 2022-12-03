@@ -14,7 +14,7 @@ export async function readProducto(req: Request, res: Response) {
     const { query: where } = req
     const productos = await ProductoModel.findAll({
       attributes: [
-        "id_Producto", "nombre_pro", "direccion_pro", "id_fotografia_pro",
+        "id_Producto", "nombre_pro", "descripcion_pro", "id_fotografia_pro",
         "precio_pro", "categoria_pro", "estatus_pro"],
       raw: true,
       where

@@ -57,7 +57,6 @@ ProductoModel.init(
 export default ProductoModel;
 
 ProductoModel.hasMany(FotografiaModel, {
-  foreignKey: "id_fotografia_pro",
-  sourceKey: "id_usuario"
+  foreignKey: "id_fotografia",
+  sourceKey: "id_fotografia_pro"
 });
-  

@@ -38,11 +38,11 @@ CantidadModel.init(
 export default CantidadModel;
 
 CantidadModel.hasMany(Producto, {
-    foreignKey: "Producto_id_Producto",
-    sourceKey: "id_Producto"
+    foreignKey: "id_Producto",
+    sourceKey: "Producto_id_Producto"
 });
 
 CantidadModel.hasMany(PedidoModel, {
-    foreignKey: "Pedido_num_pedido",
-    sourceKey: "num_pedido"
+    foreignKey: "num_pedido",
+    sourceKey: "Pedido_num_pedido"
 });

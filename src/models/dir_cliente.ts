@@ -36,13 +36,15 @@ export class dir_clienteModel extends Model<Dir_clienteType>{}
 //ProductosModel.belongsTo(ProveedoresModel,{foreignKey:"id_Proveedor"});
 
 dir_clienteModel.hasMany(ClienteModel, {
-  foreignKey: "Cliente_id_cliente",
-  sourceKey: "id_cliente"
+  foreignKey: "id_cliente",
+  sourceKey: "Cliente_id_cliente"
 });
 
+
+
 dir_clienteModel.hasMany(DireccionModel, {
-  foreignKey: "Direccion_id_Direccion",
-  sourceKey: "id_direccion"
+  foreignKey: "id_Direccion",
+  sourceKey: "Direccion_id_Direccion"
 });
 
 

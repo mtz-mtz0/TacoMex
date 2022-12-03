@@ -1,6 +1,7 @@
 import { DataTypes, Model } from "sequelize";
 import sequelize from "../db/connection";
 import PedidoType from "../types/pedido.type";
+import { ClienteModel } from "./cliente";
 import {LocalModel} from "./local";
 import RepartidorModel from "./repartidor";
 
@@ -40,7 +41,13 @@ PedidoModel.init(
     Repartidor_id_repartidor: {
       type: DataTypes.INTEGER,
       allowNull: false,
+    },
+    id_cliente_ped: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     }
+
+
   },
   { sequelize,
     timestamps: false, //Para que no se agreguen los campos CreateAt ni UpdateAt
@@ -50,11 +57,17 @@ PedidoModel.init(
 
 
 PedidoModel.hasMany(LocalModel, {
-  foreignKey: "id_usuario_cli",
-  sourceKey: "id_local",
+  foreignKey: "id_Local",
+  sourceKey: "id_local_ped",
 });
 
 PedidoModel.hasMany(RepartidorModel, {
-  foreignKey: "Repartidor_id_repartidor",
-  sourceKey: "id_repartidor",
+  foreignKey: "id_repartidor",
+  sourceKey: "Repartidor_id_repartidor",
+});
+
+
+PedidoModel.hasMany(ClienteModel, {
+  foreignKey: "id_cliente",
+  sourceKey: "id_cliente_ped",
 });
