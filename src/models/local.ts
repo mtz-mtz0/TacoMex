@@ -45,9 +45,9 @@ LocalModel.init(
   }
 );
 
-LocalModel.hasMany(DireccionModel, {
+LocalModel.hasOne(DireccionModel, {
   foreignKey: "id_direccion_loc",
-  sourceKey: "id_direccion",
+  sourceKey: "id_Direccion",
 });
 
 LocalModel.hasMany(UsuarioModel, {

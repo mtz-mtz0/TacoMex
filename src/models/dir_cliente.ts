@@ -39,6 +39,7 @@ dir_clienteModel.hasMany(ClienteModel, {
   foreignKey: "Cliente_id_cliente",
   sourceKey: "id_cliente"
 });
+
 dir_clienteModel.hasMany(DireccionModel, {
   foreignKey: "Direccion_id_Direccion",
   sourceKey: "id_direccion"
