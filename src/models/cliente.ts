@@ -70,7 +70,7 @@ import { UsuarioModel } from "./usuario";
 //ProveedoresModel.hasMany(ProductosModel,{foreignKey:"id_Proveedor"});
 //ProductosModel.belongsTo(ProveedoresModel,{foreignKey:"id_Proveedor"});
 
-ClienteModel.hasMany(UsuarioModel, {
+ClienteModel.hasOne(UsuarioModel, {
   foreignKey: "id_usuario_cli",
   sourceKey: "id_usuario"
 });
@@ -79,7 +79,10 @@ ClienteModel.hasMany(PedidoModel, {
   foreignKey: "num_pedido_cli",
   sourceKey: "num_pedido"
 });
-ClienteModel.hasMany(FotografiaModel, {
+
+
+ClienteModel.hasOne(FotografiaModel, {
   foreignKey: "id_fotografia_cli",
   sourceKey: "id_fotografia"
+
 });
