@@ -1,8 +1,13 @@
 import express from 'express';
 import morgan from 'morgan';
 import path from 'path';
+
 import indexRouter from "./routes/index";
-import UserRouter from "./routes/usuarios"
+//import UserRouter from "./routes/usuarios"
+import Direccionrouter from './routes/direccion';
+import Repartidorrouter  from './routes/repartidor';
+import Clienterouter from './routes/cliente';
+import Productorouter from './routes/producto';
 
 import cors from 'cors';
 
@@ -13,10 +18,6 @@ import sequelize  from './db/connection' ;
 class Application{
 
     app: express.Application;
-
-    private apiPath ={
-      usuarios:'/api/usuarios'
-    }
 
     constructor(){
         this.app= express();
@@ -33,6 +34,8 @@ class Application{
       this.app.set("port", process.env.PORT || 3000);
       this.app.set("view engine", "ejs");
       this.app.set('views', path.join(__dirname, './views'));
+      this.app.use(express.static(path.join(__dirname, 'public')));
+
       }
 
 
@@ -61,8 +64,12 @@ this.app.use(express.static('public'));
 
 routes(){
     this.app.use("/", indexRouter);
-    this.app.use(this.apiPath.usuarios, UserRouter);
-  
+  //  this.app.use('/api/usuarios', UserRouter);
+    this.app.use("/api/direccion",Direccionrouter);
+   this.app.use("/api/cliente",Clienterouter);
+   this.app.use("/api/repartidor",Repartidorrouter);
+   this.app.use("/api/producto",Productorouter);
+
   }
 
 

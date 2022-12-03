@@ -6,4 +6,5 @@ export default interface PedidoType {
 	estatus_ped?: string;
 	id_local_ped?: number;
 	Repartidor_id_repartidor?: number;
+	id_cliente_ped?: number;
 }

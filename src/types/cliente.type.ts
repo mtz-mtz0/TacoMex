@@ -7,6 +7,5 @@ export default interface ClienteType {
     fecha_nac?:Date;
     telefono?:string;
     id_usuario_cli?:number;
-    num_pedido_cli?:number;
     id_fotografia_cli?:number;
   }

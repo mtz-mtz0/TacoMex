@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { getUsuario, getUsuarios } from "../controllers/usuario";
+//import { getUsuario, getUsuarios } from "../controllers/usuario";
 
 const router = Router();
 
@@ -7,6 +7,7 @@ const router = Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'TacoMex' });});
 
+  
 /*---------------------------------Usuario-----------------------------------*/
 
 
@@ -39,6 +40,13 @@ router.get('/views/editarDatos/editarDatos', function(req, res, next) {
 router.get('/views/EditarDatos/editarDireccion', function(req, res, next) {
   res.render('../views/EditarDatos/editarDireccion', { title: 'Inicio de sesión' });
 });
+
+
+
+
+
+
+
 
 /*---------------------------------PRINCIPAL-----------------------------------*/
 /* GET home page(sobreNosotros.ejs)*/

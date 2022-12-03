@@ -3,3 +3,4 @@ export default interface FotografiaType {
     fotografia_fot?: string;
     tipo_fot?: string;
   }
+

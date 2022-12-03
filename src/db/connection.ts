@@ -1,10 +1,13 @@
-import {Sequelize}from 'sequelize';
+import {Sequelize}from "sequelize";
 
-const db= new Sequelize('tacomex','root','password',{
+export const sequelize= new Sequelize('tacomex','root','password',{
 host:'localhost',
 dialect:'mysql',
 port: 3306,
+
+//dialectOptions:{
+//encrypt:true,},
 //logging: false,
 });
 
-export default db;
+export default sequelize; 

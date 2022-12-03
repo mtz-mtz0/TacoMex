@@ -1,29 +1,27 @@
 import { Request, Response } from "express";
-import {ClienteModel} from "../models/cliente";
+import {DireccionModel} from "../models/direccion";
 
 /* GET home page(editar_usuarios ejs)*/
 
 
-  export async function indexViewCliente(req: Request, res: Response) {
-    return res.render('../views/cliente/cliente-view');
+  export async function indexViewDireccion(req: Request, res: Response) {
+    return res.render('../views/direccion/direccion-view');
   }
 
 
 //muestra todos los usuarios
 //localhost:3000/api/direccion 
-export async function readCliente(req: Request,res: Response){
+export async function readDireccion(req: Request,res: Response){
     try {
         const{query:where}=req
-        const clientes= await ClienteModel.findAll({
+        const direcciones= await DireccionModel.findAll({
          attributes:[
-            "id_cliente", "nombre_cli", "apellidoP_cli","apellidoM_cli","sexo_cli", "fecha_nac",
-            "telefono","id_usuario_cli","num_pedido_cli","id_fotografia_cli"
-        
-        ],
+            "id_Direccion", "codigoPostal_dir","estado_dir","colonia_dir",
+            "calle_dir","numExterior_dir","numInterior_dir"],
             raw:true,
             where   
         });
-        res.status(200).json(clientes);
+        res.status(200).json(direcciones);
     } catch (error) {
        console.log(error);
        res.status(500).json({
@@ -34,13 +32,13 @@ export async function readCliente(req: Request,res: Response){
 
 
 
-//insertar clientes
+//insertar direccion 
 //post
-  export async function createClientes(req: Request,res: Response){
+  export async function createDireccion(req: Request,res: Response){
     try {
         const{body}= req;
-       const clienteResponse=await ClienteModel.create(body,{raw:true});
-       res.status(201).json(clienteResponse);
+       const direccionResponse=await DireccionModel.create(body,{raw:true});
+       res.status(201).json(direccionResponse);
     } catch (error) {
        console.log(error);
        res.status(500).json({
@@ -52,12 +50,12 @@ export async function readCliente(req: Request,res: Response){
 
 //actualizar direccion
 //localhost:3000/api/direccion/update/1
-export async function updateCliente(req: Request,res: Response){
+export async function updateDireccion(req: Request,res: Response){
    
     try {
-        const{id_cliente}=req.params;
+        const{id_Direccion}=req.params;
         const{body}=req;
-        const entity= await ClienteModel.findByPk(id_cliente);
+        const entity= await DireccionModel.findByPk(id_Direccion);
         await entity?.update(body);
         res.status(201).json(entity?.toJSON());
     } catch (error) {
@@ -72,11 +70,11 @@ export async function updateCliente(req: Request,res: Response){
 
   //eliminar registros: Delete
   //localhost:3000/api/direccion/2
-  export async function deleteCliente(req: Request,res: Response){
+  export async function deleteDireccion(req: Request,res: Response){
     try {
-        const{id_cliente}=req.params;
+        const{id_Direccion}=req.params;
        
-       const entity=await ClienteModel.findByPk(id_cliente);
+       const entity=await DireccionModel.findByPk(id_Direccion);
        await entity?.destroy();
        res.status(204).json({ok:""});
     } catch (error) {

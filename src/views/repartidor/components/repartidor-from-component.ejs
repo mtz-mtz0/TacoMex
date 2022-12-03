@@ -1,0 +1,46 @@
+<div id="containerForm" class="card mx-basic my-basic hide">
+    <form id="formProducto" action="/catalogo/producto/" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="nombreProducto" name="nombreProducto" type="text" class="validate">
+                <label for="nombreProducto">Nombre</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s4">
+                <input id="precioCompra" name="precioCompra" type="text" class="validate">
+                <label for="precioCompra">Precio Compra</label>
+            </div>
+            <div class="input-field col s4">
+                <input id="precioVenta" name="precioVenta" type="text" class="validate">
+                <label for="precioVenta">Precion Venta</label>
+            </div>
+            <div class="input-field col s4">
+                <input id="existencia" name="existencia" type="text" class="validate">
+                <label for="existencia">Existencia</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>Imagen</span>
+                        <input id="imagen" name="imagen" type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col s1 offset-s10">
+            <button type="submit" id="btnGuardar"
+                class="waves-effect waves-light btn my-basic mx-basic blue">Registrar</button>
+        </div>
+        <div class="col s1">
+            <button id="btnCancelar" class="waves-effect waves-light btn my-basic mx-basic red">Cancelar</button>
+        </div>
+    </div>
+</div>
