@@ -3,7 +3,7 @@ import morgan from 'morgan';
 import path from 'path';
 
 import indexRouter from "./routes/index";
-//import UserRouter from "./routes/usuarios"
+import Usuariorouter from "./routes/usuarios"
 import Direccionrouter from './routes/direccion';
 import Repartidorrouter  from './routes/repartidor';
 import Clienterouter from './routes/cliente';
@@ -64,7 +64,7 @@ this.app.use(express.static('public'));
 
 routes(){
     this.app.use("/", indexRouter);
-  //  this.app.use('/api/usuarios', UserRouter);
+   this.app.use('/api/usuario', Usuariorouter);
     this.app.use("/api/direccion",Direccionrouter);
    this.app.use("/api/cliente",Clienterouter);
    this.app.use("/api/repartidor",Repartidorrouter);

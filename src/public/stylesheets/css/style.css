@@ -47,6 +47,11 @@ ul.dropdown-content.select-dropdown li span {
     height: 32px;
     background-color: #00c853;;
     border-width: 0px;
+    border-width: 2px;
+    border-color: #3bdd7e;
+    cursor:pointer;
+    box-shadow:3px 2px 6px 1px#000;
+    
   }
 
 
@@ -64,6 +69,8 @@ ul.dropdown-content.select-dropdown li span {
     background-color: #fdfffe;;
     border-width: 2px;
     border-color: #00c853;
+    cursor:pointer;
+    box-shadow:3px 2px 6px 1px#000;
   }
 
 
