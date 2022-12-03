@@ -62,16 +62,18 @@ export async function updateProducto(req: Request, res: Response) {
 
 //eliminar registros: Delete
 //localhost:3000/api/producto/2
-export async function deleteProducto(req: Request, res: Response) {
+export async function deleteProducto(req: Request,res: Response){
   try {
-    const { id_Producto } = req.params;
-    const entity = await ProductoModel.findByPk(id_Producto);
-    await entity?.destroy();
-    res.status(204).json({ ok: "" });
+     const{id_Producto}=req.params;
+     const entity=await ProductoModel.findByPk(id_Producto);
+     await entity?.destroy();
+     res.status(204).json({ok:""});
+
+
   } catch (error) {
-    console.log(error);
-    res.status(500).json({
-      msg: 'habla con el administrador'
-    })
+     console.log(error);
+     res.status(500).json({
+         msg:'habla con el administrador'
+     })
   }
 }

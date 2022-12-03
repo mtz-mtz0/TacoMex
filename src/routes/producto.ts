@@ -7,7 +7,7 @@ const Productorouter=Router();
 Productorouter.get("/view", indexViewProducto);
 Productorouter.get("/",readProducto);
 Productorouter.post("/",createProducto);
-Productorouter.post("/update/:id_Direccion",updateProducto);
-Productorouter.delete("/:id_Direccion",deleteProducto);
+Productorouter.post("/update/:id_Producto",updateProducto);
+Productorouter.delete("/:id_Producto",deleteProducto);
 
 export default Productorouter;
