@@ -1,5 +1,5 @@
 import { Router } from "express";
-import {indexViewProducto, readProducto,createProducto,updateProducto,deleteProducto  } from "../controllers/producto";
+import {indexViewProducto, readProducto,createProducto,updateProducto,deleteProducto, indexMenu} from "../controllers/producto";
 
 const Productorouter=Router();
 
@@ -9,5 +9,12 @@ Productorouter.get("/",readProducto);
 Productorouter.post("/",createProducto);
 Productorouter.post("/update/:id_Producto",updateProducto);
 Productorouter.delete("/:id_Producto",deleteProducto);
+
+
+Productorouter.get("/view", indexMenu);
+
+
+
+
 
 export default Productorouter;

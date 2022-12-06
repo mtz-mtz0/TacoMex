@@ -7,6 +7,19 @@ export async function indexViewProducto(req: Request, res: Response) {
   return res.render('../views/productos/producto-view');
 }
 
+
+
+export async function indexMenu(req: Request, res: Response) {
+  return res.render('../views/Principal/menu');
+}
+
+
+
+
+
+
+
+
 //muestra todos los usuarios
 //localhost:3000/api/producto 
 export async function readProducto(req: Request, res: Response) {
@@ -41,6 +54,9 @@ export async function createProducto(req: Request, res: Response) {
     })
   }
 }
+
+
+
 
 //actualizar producto
 //localhost:3000/api/direccion/update/1

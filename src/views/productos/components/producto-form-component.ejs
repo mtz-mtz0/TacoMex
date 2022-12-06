@@ -1,0 +1,56 @@
+<div id="containerForm" class="card mx-basic my-basic hide">
+    <form id="formProducto" action="/api/producto/" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="nombre_pro" name="nombre_pro" type="text" class="validate">
+                <label for="nombre_pro">Nombre</label>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="input-field col s4">
+                <input id="descripcion_pro" name="descripcion_pro" type="text" class="validate">
+                <label for="descripcion_pro">Descripcion</label>
+            </div>
+
+
+            <div class="input-field col s4">
+                <input id="id_fotografia_pro" name="id_fotografia_pro" type="text" class="validate">
+                <label for="id_fotografia_pro">id fotografia</label>
+            </div>
+
+
+
+            <div class="input-field col s4">
+                <input id="precio_pro" name="precio_pro" type="text" class="validate">
+                <label for="precio_pro">Precio producto</label>
+            </div>
+        </div>
+
+
+        <div class="input-field col s4">
+            <input id="categoria_pro" name="categoria_pro" type="text" class="validate">
+            <label for="categoria_pro">Categoria producto</label>
+        </div>
+    </div>
+
+    <div class="input-field col s4">
+        <input id="estatus_pro" name="estatus_pro" type="text" class="validate">
+        <label for="estatus_pro">Estatus producto</label>
+    </div>
+</div>
+
+
+        
+    </form>
+    <div class="row">
+        <div class="col s1 offset-s10">
+            <button type="submit" id="btnGuardar"
+                class="waves-effect waves-light btn my-basic mx-basic blue">Registrar</button>
+        </div>
+        <div class="col s1">
+            <button id="btnCancelar" class="waves-effect waves-light btn my-basic mx-basic red">Cancelar</button>
+        </div>
+    </div>
+</div>

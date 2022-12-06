@@ -1,0 +1,26 @@
+<table>
+    <thead>
+        <th>
+            <tr>
+                <td>#</td>
+                <td>USUARIO</td>
+                <td>CONTRASEÑA</td>
+                <td>TIPO USUARIO</td>
+            </tr>
+        </th>
+    </thead>
+    <tbody>
+        <% for(var i=0; i<records.length ;i++){ %> 
+            <tr>
+                <td><%=records[i]["id_usuario"]  %></td>
+                <td><%=records[i]["usuario_us"]  %></td>
+                <td><%=records[i]["contraseña"]  %></td>
+                <td><%=records[i]["tipo_us"]  %></td>
+                <td>
+                    <a class="waves-effect waves-light btn" href="/api/usuario/view/form-edit/<%=records[i]["id_usuario"]  %> ">Editar</a>
+                    <a class="waves-effect waves-light btn" href="/api/v1/example/delete/<%=records[i]["id_usuario"]  %>">Eliminar</a>
+                </td>
+            </tr>
+        <% } %> 
+    </tbody>
+</table>
