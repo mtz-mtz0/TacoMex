@@ -13,7 +13,14 @@ const producto = (() => {
   };
 
 
-
+  const _actionButtonEditar = async (event) => {
+    const $btn = event.target;
+    const id_Producto = $btn.getAttribute("item-id");
+    const response = await http.get(`${BASE_URL}?id_Producto=${id_Producto}`);
+    formProducto.setData(response[0],'PUT');
+    formProducto.setVisible(true);
+    producto.setVisible(false);
+  };
 
   const _actionButtonEliminar = async (event) => {
     const $btn = event.target;
@@ -39,6 +46,8 @@ const producto = (() => {
 
 
     }
+    $row.appendChild(_createBtnAction(item[itemId], "Editar",_actionButtonEditar));
+
     $row.appendChild(_createBtnAction(item[itemId], "Eliminar",_actionButtonEliminar));
     return $row;
 };
@@ -64,10 +73,22 @@ const _setVisible = (visible = true) => {
 
 
 
+const _initElements = () => {
+  _getData();
+  _configureBtnNuevo();
+};
 
-  const _initElements = () => {
-      _getData();
-  };
+const _configureBtnNuevo = () => {
+  const $btnNuevo = document.getElementById("btnNuevo");
+  $btnNuevo.addEventListener("click", () => {
+    producto.setVisible(false);
+    formProducto.setVisible(true);
+    producto.setData({},'POST')
+  });
+};
+
+
+
 
   return {
       init: () => {

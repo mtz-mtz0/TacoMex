@@ -1,6 +1,6 @@
 const usuario = (() => {
   const $bodyTable = document.getElementById("data");
-  const BASE_URL ="http://localhost:3000/api/usuario";
+  const BASE_URL ="/api/usuario";
   const $containerTable =document.getElementById("containerTable");
 
   const _getData = async () => {
@@ -13,7 +13,15 @@ const usuario = (() => {
   };
 
 
-
+  const _actionButtonEditar = async (event) => {
+    const $btn = event.target;
+    const id_usuario = $btn.getAttribute("item-id");
+    const response = await http.get(`${BASE_URL}?id_usuario=${id_usuario}`);
+    formUsuarios.setData(response[0],'PUT');
+    formUsuarios.setVisible(true);
+  //  usuario._setVisible(false);
+  };
+  
 
   const _actionButtonEliminar = async (event) => {
     const $btn = event.target;
@@ -39,6 +47,7 @@ const usuario = (() => {
 
 
     }
+    $row.appendChild(_createBtnAction(item[itemId], "Editar",_actionButtonEditar));
     $row.appendChild(_createBtnAction(item[itemId], "Eliminar",_actionButtonEliminar));
     return $row;
 };
@@ -47,7 +56,7 @@ const usuario = (() => {
 const _createBtnAction = (itemId = 0, labelBtn = "", _actionFuntion = () => {}) => {
   const $btn = document.createElement("button");
   $btn.innerText = labelBtn;
-  $btn.className += "waves-effect waves-light btn red";
+  $btn.className += "waves-effect waves-light btn green";
   $btn.setAttribute("item-id", itemId);
   $btn.addEventListener("click", _actionFuntion);
   return $btn;
@@ -63,11 +72,24 @@ const _setVisible = (visible = true) => {
 };
 
 
+const _initElements = () => {
+  _getData();
+  _configureBtnNuevo;
+};
 
 
-  const _initElements = () => {
-      _getData();
-  };
+const _configureBtnNuevo = () => {
+  const $btnNuevo = document.getElementById("botonNuevo");
+  $btnNuevo.addEventListener("click", () => {
+    usuario.setVisible(false);
+    formUsuarios.setVisible(true);
+    usuario.setData({},'POST')
+  });
+};
+
+
+
+
 
   return {
       init: () => {

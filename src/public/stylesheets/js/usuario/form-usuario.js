@@ -1,31 +1,36 @@
-const formProducto = (() => {
+const formUsuarios = (() => {
     const $containerForm = document.getElementById("containerForm");
     const $form = document.getElementById("formUsuario");
-    const BASE_URL = "/api/usuarios";
+    const BASE_URL ="/api/usuario";
     //
   
     const _setData = (item = {}, typeRender = "POST") => {
-      const $inputNombreProducto = document.getElementById("nombreProducto");
-      const $inputPrecioCompra = document.getElementById("precioCompra");
-      const $precioVenta = document.getElementById("precioVenta");
-      const $inputExistencia = document.getElementById("existencia");
-      const { idProducto, nombreProducto, precioCompra, precioVenta, existencia } = item;
-      $inputNombreProducto.value = nombreProducto;
-      $inputPrecioCompra.value = precioCompra;
-      $precioVenta.value = precioVenta;
-      $inputExistencia.value = existencia;
+      const $inputNombreUsuario = document.getElementById("usuario_us");
+      const $inputContraseña = document.getElementById("contraseña");
+      const $tipo_us = document.getElementById("tipo_us");
+
+      const { id_usuario, usuario_us, contraseña, tipo_us} = item;
+
+      $inputNombreUsuario.value = usuario_us;
+      $inputContraseña.value = contraseña;
+      $tipo_us.value = tipo_us;
       $form.setAttribute("method", typeRender);
-      $form.setAttribute("item-id", idProducto);
+      $form.setAttribute("item-id", id_usuario);
       M.updateTextFields();
     };
   
+
+
     const _configureBtnCancelar = () => {
       const $btnCancelar = document.getElementById("btnCancelar");
       $btnCancelar.addEventListener("click", () => {
-        formProducto.setVisible(false);
-        producto.setVisible(true);
+        formUsuarios.setVisible(false);
+        usuario.setVisible(true);
       });
     };
+
+
+
   
     const _configureBtnGuardar = () => {
       const $btnGuardar = document.getElementById("btnGuardar");
@@ -42,22 +47,33 @@ const formProducto = (() => {
         }
       });
     };
+
+
+
+
   
     const _create = async (formData) => {
       await http.post({url:BASE_URL,body: formData});
-      formProducto.setVisible(false);
-      producto.setVisible(true);
-      producto.getData();
+      formUsuarios.setVisible(false);
+      usuario.setVisible(true);
+      usuario.getData();
     };
+
+
   
     const _update = async (formData) => {
       const itemId = $form.getAttribute("item-id");
       await http.post({url:`${BASE_URL}/update/${itemId}`,body: formData});
-      formProducto.setVisible(false);
-      producto.setVisible(true);
-      producto.getData();
+      formUsuarios.setVisible(false);
+      usuario.setVisible(true);
+      usuario.getData();
     };
   
+
+
+
+
+
     const _setVisibleForm = (visible = true) => {
       if (visible) {
         $containerForm.classList.remove("hide");
@@ -65,6 +81,8 @@ const formProducto = (() => {
         $containerForm.classList.add("hide");
       }
     };
+
+
   
     const _init = () => {
       _configureBtnCancelar();
@@ -78,5 +96,5 @@ const formProducto = (() => {
     };
   })();
   
-  formProducto.init();
+  formUsuarios.init();
   

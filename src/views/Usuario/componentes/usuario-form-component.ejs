@@ -1,22 +1,25 @@
 <div id="containerForm" class="card mx-basic my-basic hide">
-    <form id="formUsuario" action="/catalogo/usuario/" method="post" enctype="multipart/form-data">
+    <form id="formUsuario" action="/api/usuario" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="input-field col s12">
-                <input id="nombreUsuario" name="nombreUsuario" type="text" class="validate">
-                <label for="nombreUsuario">Nombre usuario</label>
+                <input id="usuario_us" name="usuario_us" type="text" class="validate">
+                <label for="usuario_us">Nombre usuario</label>
             </div>
         </div>
+
         <div class="row">
             <div class="input-field col s4">
-                <input id="precioCompra" name="precioCompra" type="text" class="validate">
-                <label for="precioCompra">Contraseña</label>
+                <input id="contraseña" name="contraseña" type="text" class="validate">
+                <label for="contraseña">Contraseña</label>
             </div>
+
+
             <div class="input-field col s4">
-                <input id="precioVenta" name="precioVenta" type="text" class="validate">
-                <label for="precioVenta">Tipo usuario</label>
+                <input id="tipo_us" name="tipo_us" type="text" class="validate">
+                <label for="tipo_us">Tipo de usuario</label>
             </div>
-        
-      
+        </div>
+       
     </form>
     <div class="row">
         <div class="col s1 offset-s10">
