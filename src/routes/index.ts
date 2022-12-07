@@ -17,8 +17,8 @@ router.get('/views/Usuario/inicio_sesion', function(req, res, next) {
 }); 
 
 /* GET home page(registro.ejs)*/
-router.get('/views/Usuario/registro', function(req, res, next) {
-  res.render('../views/Usuario/registro', { title: 'Registro de usuario' });
+router.get('/api/cliente/view', function(req, res, next) {
+  res.render('../views/cliente/cliente', { title: 'Registro de usuario' });
 }); 
 
 /* GET home page(registro_direccion.ejs)*/

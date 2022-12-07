@@ -1,97 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include("../Comunes/header.ejs") -%>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLIENTE CRUD</title>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
-</head>
+    <div class="row">
+        <div class="col s12 m4">
+            <br><br><br>
+            <a href="#" class="grey-text text-darken-2 center"><img class="responsive-img"
+                    src="https://static.vecteezy.com/system/resources/previews/004/026/483/original/italy-flag-mexican-chef-mascot-holding-a-taco-vector.jpg"></a>
+        </div>
 
-<body>
-    <!-- Form EJS -->
-    <form id="formCliente" action="./register" method="post">
-        <input type="text" name="nombre_cli" id="nombre_cli" placeholder="nombre cliente">
-        <input type="text" name="apellidoP_cli" id="apellidoP_cli" placeholder="apellido paterno">
-        <input type="text" name="apellidoM_cli" id="apellidoM_cli" placeholder="apellido materno">
-        <input type="text" name="sexo_cli" id="sexo_cli" placeholder="sexo">
-        <input type="text" name="fecha_nac" id="fecha_nac" placeholder="fecha nac">
-        <input type="text" name="telefono" id="telefono" placeholder="telefono">
-        <input type="text" name="id_usuario_cli" id="id_usuario_cli" placeholder="id_usuario">
-        <input type="text" name="id_fotografia_cli" id="id_fotografia_cli" placeholder="id fotografia">
-        <input type="text" name="password" id="password" placeholder="password">
-        <button type="submit" id="btnGuardar" class="waves-effect waves-light btn">Guardar</button>
-    </form>
+        <div class="col s12 m8">
+            <br><br><br>
+            <form id="formCliente" action="./register" method="post" class="col s15">
+                <div class="col s12 m5">
+                    <div class="input-field col s12">
+                        <input type="text" name="nombre_cli" id="nombre_cli" class="validate" required>
+                        <label for="nombre_cli">Nombre</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" name="apellidoP_cli" id="apellidoP_cli" class="validate" required>
+                        <label for="apellidoP_cli">Apellido paterno</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" name="apellidoM_cli" id="apellidoM_cli" class="validate" required>
+                        <label for="apellidoM_cli">Apellido Materno</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" name="telefono" id="telefono" class="validate" required>
+                        <label for="telefono">Telefono</label>
+                    </div>
+                    <div class="section">
+                        <div class="input-field col s12">
+                            <input type="text" name="fecha_nac" id="fecha_nac" class="datepicker" required>
+                            <label for="fecha_nac">Fecha de nacimiento</label>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Table EJS -->
-    <table>
-        <thead>
-            <th>
-                <tr>
-                    <td>id_cliente</td>
-                    <td>nombre cliente</td>
-                    <td>apelliedo paterno</td>
-                    <td>apellido materno</td>
-                    <td>sexo</td>
-                    <td>fecha nac</td>
-                    <td>telefono</td>
-                    <td>id_usuario_cli</td>
-                    <td>id_fotografia_cli</td> 
-                    <td>Acciones</td>                 
-                </tr>
-            </th>
-        </thead>
+                <div class="col s18 m4">
+                    <div class="row">
 
+                        <div class="input-field col s6">
+                            <label>
+                                <input class="with-gap" name="sexo_cli" id="sexo_cli" type="radio" value="H" required />
+                                <span>Hombre</span>
+                            </label>
+                        </div>
+                        <div class="input-field col s6">
+                            <label>
+                                <input class="with-gap" name="sexo_cli" id="sexo_cli" type="radio" value="M" required />
+                                <span>Mujer</span>
+                            </label>
+                        </div>
+                        <br><br>
+                    </div>
 
-        <tbody>
-            <% for(var i=0; i<records.length ;i++){ %>
-                <tr>
-                    <td>
-                        <%=records[i]["id_cliente"] %>
-                    </td>
-                    <td>
-                        <%=records[i]["nombre_cli"] %>
-                    </td>
-                    <td>
-                        <%=records[i]["apellidoP_cli"] %>
-                    </td>
-                    <td>
-                        <%=records[i]["apellidoM_cli"] %>
-                    </td>
-                    <td>
-                        <%=records[i]["sexo_cli"] %>
-                    </td>
-                    <td>
-                        <%=records[i]["fecha_nac"] %>
-                    </td>
-                    <td>
-                        <%=records[i]["telefono"] %>
-                    </td>
-                    <td>
-                        <%=records[i]["id_usuario_cli"] %>
-                    </td>
-                    <td>
-                        <%=records[i]["id_fotografia_cli"] %>
-                    </td>
+                    <div class="input-field col s12">
+                        <input type="text" name="id_usuario_cli" id="id_usuario_cli" class="validate">
+                        <label for="id_usuario_cli">Email</label>
+                        <span class="helper-text" data-error="wrong" data-success="right">Tu email será usado como tu
+                            usuario</span>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" name="password" id="password" class="validate">
+                        <label for="password">Contraseña</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" name="id_fotografia_cli" id="id_fotografia_cli" class="validate" required>
+                        <label for="id_fotografia_cli">fotografia</label>
+                    </div>
 
+                    <div class="input-field col s14">
+                        <button type="submit" id="btnGuardar" class="botonDentro">
+                            <span id="span-1">Guardar</span>
+                        </button>
+                    </div>
 
-                    <td>
-                        <a class="waves-effect waves-light btn" href="/cliente/view/edit/<%=records[i][" id_cliente"] %>
-                            ">Editar</a>
-                        <a class="waves-effect waves-light btn" href="">Eliminar</a>
-                    </td>
-                </tr>
-                <% } %>
-        </tbody>
-    </table>
+                </div>
+                <br><br><br>
+            </form>
+        </div>
 
-    <script src="/stylesheets/js/cliente/cliente-crud.js"></script>
+    </div>
 
 
-    
-</body>
+    </body>
 
-</html>
+    <%- include("../Comunes/footer.ejs") -%>
