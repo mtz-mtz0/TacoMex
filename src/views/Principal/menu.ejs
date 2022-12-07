@@ -1,41 +1,40 @@
-<div id="containerTable" class="card mx-basic my-basic ">
-    <%- include("../Comunes/header.ejs") -%>
+<%- include("../Comunes/header.ejs") -%>
+    <div class="container">
+        <br>
+        <ul class="pagination center ">
+            <li class="active orange accent-4"><a href="#!">Todos</a></li>
+            <li class="waves-effect"><a href="#!">Tacos</a></li>
+            <li class="waves-effect"><a href="#!">Bebidas</a></li>
+            <li class="waves-effect"><a href="#!">Otros</a></li>
+        </ul>
+    </div>
 
-        <div class="row">
-            <% for(i=0;i<productos.length;i++){%>
-                <div class="col s6 m2">
-                    <div class="card">
-                        <div class="card-image ">
-                            <img height="210px"
-                                src="https://www.caiv.org/wp-content/plugins/smg-theme-tools/public/images/not-available-es.png">
-                            <a class="btn-floating halfway-fab waves-effect waves-light orange accent-4"><i
-                                    class="material-icons">add</i></a>
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title  activator grey-text text-darken-4">
-                                <%=productos[i].nombre_pro%>
+    <div class="row">
+        <% for(var i=0;i<productos.length;i++){%>
+            <div class="col s6 m2">
+                <div class="card">
+                    <div class="card-image ">
+                        <img height="210px"
+                            src="https://www.caiv.org/wp-content/plugins/smg-theme-tools/public/images/not-available-es.png">
+                        <a class="btn-floating halfway-fab waves-effect waves-light orange accent-4"><i
+                                class="material-icons">add</i></a>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title  activator grey-text text-darken-4">
+                            <%=productos[i].nombre_pro%>
+                                <h6>Precio : $ <%=productos[i].precio_pro%>
+                                </h6><i class="material-icons right">more_vert</i>
+                        </span>
+                        <p>Descripción: <%=productos[i].descripcion_pro%></p>
 
-                                    <h6>Precio : $ <%=productos[i].precio_pro%>
-                                    </h6><i class="material-icons right">more_vert</i>
-                            </span>
-                            <p>Descripción: </p>
-
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">
-                                <%=productos[i].nombre_pro%>
-                                
-                                <i class="material-icons right">close</i>
-                            </span>
-                            <p>Descripción <%=productos[i].descripcion_pro%>
-                            </p>
-                        </div>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4"><%=productos[i].nombre_pro%><i
+                                class="material-icons right">close</i></span>
+                        <p>Descripción <%=productos[i].descripcion_pro%></p>
                     </div>
                 </div>
-        </div>
+            </div>
         <% }%>
-</div>
-<script src="/stylesheets/js/producto/productos.js"></script>
-
-<%- include("../Comunes/footer.ejs") -%>
     </div>
+    <%- include("../Comunes/footer.ejs") -%>

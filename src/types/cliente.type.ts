@@ -8,4 +8,6 @@ export default interface ClienteType {
     telefono?:string;
     id_usuario_cli?:number;
     id_fotografia_cli?:number;
+    password?:string;
+
   }

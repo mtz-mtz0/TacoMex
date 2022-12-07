@@ -1,20 +1,21 @@
 import { DataTypes, Model } from "sequelize";
-import sequelize from "../db/connection";
+import {sequelize} from "../db/connection";
 import db from '../db/connection';
 import ClienteType from "../types/cliente.type";
 import { FotografiaModel } from "./fotografia";
 import {PedidoModel} from "./pedido";
 import { UsuarioModel } from "./usuario";
+import {TablaProducto } from "./productos";
+import {} from "./productos";
 //export class ClienteModel extends Model<ClienteType>{}
 
 /**
  * Tabla clientes
  */
-
  export class ClienteModel extends Model<ClienteType> { }
 
-
- ClienteModel.init( {
+// export const TablaCliente = db.define('cliente', {
+ClienteModel.init( {
     id_cliente: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -49,23 +50,28 @@ import { UsuarioModel } from "./usuario";
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    
+
     id_fotografia_cli: {
       type: DataTypes.INTEGER,
       allowNull: false,
-    }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+  }
   },
   {
     sequelize,
     timestamps: false, //Para que no se agreguen los campos CreateAt ni UpdateAt
     tableName: "cliente"
-  },
+ }
+//},
  );
 
 
 
-//ProveedoresModel.hasMany(ProductosModel,{foreignKey:"id_Proveedor"});
-//ProductosModel.belongsTo(ProveedoresModel,{foreignKey:"id_Proveedor"});
+//ProveedoresModel.hasMany(TablaProducto,{foreignKey:"id_Proveedor"});
+//TablaProducto.belongsTo(ProveedoresModel,{foreignKey:"id_Proveedor"});
 
 ClienteModel.hasOne(UsuarioModel, {
   foreignKey: "id_usuario",

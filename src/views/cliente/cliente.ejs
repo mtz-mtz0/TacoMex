@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLIENTE CRUD</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
+</head>
+
+<body>
+    <!-- Form EJS -->
+    <form id="formCliente" action="./crud" method="post">
+        <input type="text" name="id_cliente" id="id_cliente">
+        <input type="text" name="nombre_cli" id="nombre_cli" hidden>
+        <input type="text" name="apellidoP_cli" id="apellidoP_cli">
+        <input type="number" name="apellidoM_cli" id="apellidoM_cli">
+        <input type="text" name="sexo_cli" id="sexo_cli">
+        <input type="number" name="fecha_nac" id="fecha_nac">
+        <input type="text" name="telefono" id="telefono">
+        <input type="number" name="id_usuario_cli" id="id_usuario_cli">
+        <input type="text" name="id_fotografia_cli" id="id_fotografia_cli">
+
+        <button type="submit" id="btnGuardar" class="waves-effect waves-light btn">Guardar</button>
+    </form>
+
+    <!-- Table EJS -->
+    <table>
+        <thead>
+            <th>
+                <tr>
+                    <td>id_cliente</td>
+                    <td>nombre cliente</td>
+                    <td>apelliedo paterno</td>
+                    <td>apellido materno</td>
+                    <td>sexo</td>
+                    <td>fecha nac</td>
+                    <td>telefono</td>
+                    <td>id_usuario_cli</td>
+                    <td>id_fotografia_cli</td> 
+                    <td>Acciones</td>                 
+                </tr>
+            </th>
+        </thead>
+        <tbody>
+            <% for(var i=0; i<records.length ;i++){ %>
+                <tr>
+                    <td>
+                        <%=records[i]["id_cliente"] %>
+                    </td>
+                    <td>
+                        <%=records[i]["nombre_cli"] %>
+                    </td>
+                    <td>
+                        <%=records[i]["apellidoP_cli"] %>
+                    </td>
+                    <td>
+                        <%=records[i]["apellidoM_cli"] %>
+                    </td>
+                    <td>
+                        <%=records[i]["sexo_cli"] %>
+                    </td>
+                    <td>
+                        <%=records[i]["fecha_nac"] %>
+                    </td>
+                    <td>
+                        <%=records[i]["telefono"] %>
+                    </td>
+                    <td>
+                        <%=records[i]["id_usuario_cli"] %>
+                    </td>
+                    <td>
+                        <%=records[i]["id_fotografia_cli"] %>
+                    </td>
+
+
+                    <td>
+                        <a class="waves-effect waves-light btn" href="/cliente/view/edit/<%=records[i][" id_cliente"] %>
+                            ">Editar</a>
+                        <a class="waves-effect waves-light btn" href="">Eliminar</a>
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+
+    <script src="/stylesheets/js/cliente/cliente-crud.js"></script>
+
+
+    
+</body>
+
+</html>

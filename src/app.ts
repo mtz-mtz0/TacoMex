@@ -8,6 +8,9 @@ import Direccionrouter from './routes/direccion';
 import Repartidorrouter  from './routes/repartidor';
 import Clienterouter from './routes/cliente';
 import Productorouter from './routes/producto';
+import MenuRouter from './routes/menu';
+
+
 
 import cors from 'cors';
 
@@ -69,6 +72,7 @@ routes(){
    this.app.use("/api/cliente",Clienterouter);
    this.app.use("/api/repartidor",Repartidorrouter);
    this.app.use("/api/producto",Productorouter);
+   this.app.use("/api/menu",MenuRouter);
 
   }
 

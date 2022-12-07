@@ -4,9 +4,10 @@ import ProductoType from "../types/Producto.type";
 import {FotografiaModel} from "./fotografia";
 
 
-export class ProductoModel extends Model<ProductoType>{ }
+export class TablaProducto extends Model<ProductoType>{ }
 
-ProductoModel.init(
+TablaProducto.init(
+  //export const TablaProducto = sequelize.define('producto',
   {
     id_Producto: {
       type: DataTypes.INTEGER,
@@ -48,15 +49,15 @@ ProductoModel.init(
 
   },
   {
-    sequelize,
+   sequelize,
     timestamps: false,//Para que no se agreguen los campos CreateAt ni UpdateAt
     tableName: "producto",
   }
 );
 
-export default ProductoModel;
+export default TablaProducto;
 
-ProductoModel.hasMany(FotografiaModel, {
+TablaProducto.hasMany(FotografiaModel, {
   foreignKey: "id_fotografia",
   sourceKey: "id_fotografia_pro"
 });

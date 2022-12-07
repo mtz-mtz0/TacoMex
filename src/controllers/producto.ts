@@ -1,5 +1,8 @@
-import { Request, Response } from "express";
-import { ProductoModel } from "../models/productos";
+import { NextFunction, Request, Response } from "express";
+import {TablaProducto} from "../models/productos";
+import db from '../db/connection';
+import {sequelize} from "../db/connection";
+import { where } from "sequelize";
 
 
 /* GET home page(editar_usuarios ejs)*/
@@ -7,16 +10,30 @@ export async function indexViewProducto(req: Request, res: Response) {
   return res.render('../views/productos/producto-view');
 }
 
+//export async function indexMenu(req: Request, res: Response) {
+  //return res.render('../views/Principal/menu',{title: 'Menu' });}
 
 
-export async function indexMenu(req: Request, res: Response) {
-  return res.render('../views/Principal/menu');
-}
+ 
+    export async function indexMenu(req: Request, res: Response) {
+      try {
+       // const records= await TablaProducto.findAll(
+          const records = await TablaProducto.findAll({ raw: true })
+
+          //{where: { descripcion_pro: 'adrian'  }    }  
+          const data = { httpCode: 0, message: "", records }
+
+        res.render("../views/Principal/menu", data);
+      } catch (error) {
+        console.log(error);
+        res.status(500).json({
+          msg: 'habla con el administrador plox'
+        })
+      }
+    }
 
 
-
-
-
+    
 
 
 
@@ -25,7 +42,7 @@ export async function indexMenu(req: Request, res: Response) {
 export async function readProducto(req: Request, res: Response) {
   try {
     const { query: where } = req
-    const productos = await ProductoModel.findAll({
+    const productos = await TablaProducto.findAll({
       attributes: [
         "id_Producto", "nombre_pro", "descripcion_pro", "id_fotografia_pro",
         "precio_pro", "categoria_pro", "estatus_pro"],
@@ -41,11 +58,23 @@ export async function readProducto(req: Request, res: Response) {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 //insertar Producto
 export async function createProducto(req: Request, res: Response) {
   try {
     const { body } = req;
-    const productoResponse = await ProductoModel.create(body, { raw: true });
+    const productoResponse = await TablaProducto.create(body, { raw: true });
     res.status(201).json(productoResponse);
   } catch (error) {
     console.log(error);
@@ -63,9 +92,10 @@ export async function createProducto(req: Request, res: Response) {
 export async function updateProducto(req: Request, res: Response) {
 
   try {
-    const { id_Producto } = req.params;
     const { body } = req;
-    const entity = await ProductoModel.findByPk(id_Producto);
+    const { id_Producto } = req.params;
+    
+    const entity = await TablaProducto.findByPk(id_Producto);
     await entity?.update(body);
     res.status(201).json(entity?.toJSON());
   } catch (error) {
@@ -81,7 +111,7 @@ export async function updateProducto(req: Request, res: Response) {
 export async function deleteProducto(req: Request,res: Response){
   try {
      const{id_Producto}=req.params;
-     const entity=await ProductoModel.findByPk(id_Producto);
+     const entity=await TablaProducto.findByPk(id_Producto);
      await entity?.destroy();
      res.status(204).json({ok:""});
 
@@ -90,6 +120,6 @@ export async function deleteProducto(req: Request,res: Response){
      console.log(error);
      res.status(500).json({
          msg:'habla con el administrador'
-     })
-  }
-}
+        })
+      }
+    }
