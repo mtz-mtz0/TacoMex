@@ -52,6 +52,7 @@ ClienteModel.init( {
     },
     id_usuario_cli: {
       type: DataTypes.INTEGER,
+      defaultValue: '23',
       allowNull: true,
     },
 
@@ -74,10 +75,10 @@ ClienteModel.init( {
 //ProveedoresModel.hasMany(TablaProducto,{foreignKey:"id_Proveedor"});
 //TablaProducto.belongsTo(ProveedoresModel,{foreignKey:"id_Proveedor"});
 
-//ClienteModel.hasOne(UsuarioModel, {
- // foreignKey: "id_usuario",
-  //sourceKey: "id_usuario_cli"
-//});
+ClienteModel.hasOne(UsuarioModel, {
+ foreignKey: "id_usuario",
+  sourceKey: "id_usuario_cli"
+});
 
 
 

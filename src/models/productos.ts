@@ -28,7 +28,7 @@ TablaProducto.init(
 
     id_fotografia_pro: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
 
     precio_pro: {

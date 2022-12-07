@@ -53,9 +53,9 @@ export async function readRepartidor(req: Request,res: Response){
 export async function updateRepartidor(req: Request,res: Response){
    
     try {
-        const{id_Repartidor}=req.params;
+        const{id_repartidor}=req.params;
         const{body}=req;
-        const entity= await RepartidorModel.findByPk(id_Repartidor);
+        const entity= await RepartidorModel.findByPk(id_repartidor);
         await entity?.update(body);
         res.status(201).json(entity?.toJSON());
     } catch (error) {
@@ -72,9 +72,9 @@ export async function updateRepartidor(req: Request,res: Response){
   //localhost:3000/api/repartidor/2
   export async function deleteRepartidor(req: Request,res: Response){
     try {
-        const{id_Repartidor}=req.params;
+        const{id_repartidor}=req.params;
        
-       const entity=await RepartidorModel.findByPk(id_Repartidor);
+       const entity=await RepartidorModel.findByPk(id_repartidor);
        await entity?.destroy();
        res.status(204).json({ok:""});
     } catch (error) {

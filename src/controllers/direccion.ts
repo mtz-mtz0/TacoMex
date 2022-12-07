@@ -48,6 +48,11 @@ export async function readDireccion(req: Request,res: Response){
   }
 
 
+
+
+
+
+  
 //actualizar direccion
 //localhost:3000/api/direccion/update/1
 export async function updateDireccion(req: Request,res: Response){

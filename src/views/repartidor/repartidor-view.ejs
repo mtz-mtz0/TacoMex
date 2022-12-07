@@ -9,18 +9,19 @@
     <body>
     
             <main>
-                <h4 class="my-basic">Repartidor </h4>
+                <h4 class="my-basic" align="center">Repartidor </h4>
                     
-                    <%- include("../repartidor/components/repartidor-table-component.ejs") -%>
     
-    
+                  <%-   include("../repartidor/components/repartidor-form-component.ejs")-%>
+     <%- include("../repartidor/components/repartidor-table-component.ejs") -%> 
+
                 <!--img width="100" height="100" src="/api/v1/file?filePath= " alt="" srcset=""-->
     
             </main>
       <%- include("../Comunes/footer.ejs") -%>
+
         
-        
-        <script src="/stylesheets/js/repartidor/repartidor.js"></script>
+         <script src="/stylesheets/js/repartidor/repartidor.js"></script>     
     
     
     </body>

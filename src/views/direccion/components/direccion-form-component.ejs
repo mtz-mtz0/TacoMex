@@ -1,46 +1,64 @@
-<div id="containerForm" class="card mx-basic my-basic hide">
-    <form id="formProducto" action="/catalogo/producto/" method="post" enctype="multipart/form-data">
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="nombreProducto" name="nombreProducto" type="text" class="validate">
-                <label for="nombreProducto">Nombre</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s4">
-                <input id="precioCompra" name="precioCompra" type="text" class="validate">
-                <label for="precioCompra">Precio Compra</label>
-            </div>
-            <div class="input-field col s4">
-                <input id="precioVenta" name="precioVenta" type="text" class="validate">
-                <label for="precioVenta">Precion Venta</label>
-            </div>
-            <div class="input-field col s4">
-                <input id="existencia" name="existencia" type="text" class="validate">
-                <label for="existencia">Existencia</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <div class="file-field input-field">
-                    <div class="btn">
-                        <span>Imagen</span>
-                        <input id="imagen" name="imagen" type="file">
-                    </div>
-                    <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
-    <div class="row">
-        <div class="col s1 offset-s10">
-            <button type="submit" id="btnGuardar"
-                class="waves-effect waves-light btn my-basic mx-basic blue">Registrar</button>
-        </div>
-        <div class="col s1">
-            <button id="btnCancelar" class="waves-effect waves-light btn my-basic mx-basic red">Cancelar</button>
-        </div>
+<div class="row">
+    <div class="col s12 m4">
+        <br><br><br>
+        <a href="#" class="grey-text text-darken-2 center"><img class="responsive-img"
+                src="https://cdn-icons-png.flaticon.com/512/854/854901.png"></a>
     </div>
+
+    <div class="col s12 m8">
+        <br><br><br>
+        <form id="formCliente" action="./register" method="post" class="col s15">
+            <div class="col s12 m5">
+                <div class="input-field col s12">
+                    <input type="text" name="codigoPostal_dir" id="codigoPostal_dir" class="validate" required>
+                    <label for="codigoPostal_dir">Codigo Postal</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="text" name="estado_dir" id="estado_dir" class="validate" required>
+                    <label for="estado_dir">Estado</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="text" name="colonia_dir" id="colonia_dir" class="validate" required>
+                    <label for="colonia_dir">Colonia</label>
+                </div>
+              
+            </div>
+
+            <div class="col s18 m4">
+
+
+                <div class="input-field col s12">
+                    <input type="text" name="calle_dir" id="calle_dir" class="validate" required>
+                    <label for="calle_dir">Calle </label>
+                </div>
+
+
+
+                    <div class="input-field col s12">
+                        <input type="text" name="numExterior_dir" id="numExterior_dir" class="validate" required>
+                        <label for="numExterior_dir">Numero Exterior </label>
+                    </div>
+                
+            
+
+                    <div class="input-field col s12">
+                        <input type="text" name="numInterior_dir" id="numInterior_dir" class="validate" required>
+                        <label for="numInterior_dir">Numero Interior </label>
+                    </div>
+
+
+                <div class="input-field col s14">
+                    <button type="submit" id="btnGuardar" class="botonDentro">
+                        <span id="span-1">Guardar</span>
+                    </button>
+                </div>
+
+            </div>
+            <br><br><br>
+        </form>
+    </div>
+
 </div>
+
+
+</body>

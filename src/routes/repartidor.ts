@@ -8,8 +8,8 @@ const Repartidorrouter=Router();
 /* GET home page(editar_usuarios ejs)*/
 Repartidorrouter.get("/view", indexViewRepartidor);
 Repartidorrouter.get("/",readRepartidor);
-Repartidorrouter.post("/",createRepartidor);
-Repartidorrouter.post("/update/:id_Direccion",updateRepartidor);
-Repartidorrouter.delete("/:id_Direccion",deleteRepartidor);
+Repartidorrouter.post("/register",createRepartidor);
+Repartidorrouter.post("/update/:id_repartidor",updateRepartidor);
+Repartidorrouter.delete("/:id_repartidor",deleteRepartidor);
 
 export default Repartidorrouter;

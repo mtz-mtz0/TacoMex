@@ -67,7 +67,9 @@ export async function createProducto(req: Request, res: Response) {
   try {
     const { body } = req;
     const productoResponse = await TablaProducto.create(body, { raw: true });
-    res.status(201).json(productoResponse);
+   
+    res.status(201).json();
+
   } catch (error) {
     console.log(error);
     res.status(500).json({
