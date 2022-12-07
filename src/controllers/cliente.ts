@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import {ClienteModel} from "../models/cliente";
+import { indexViewDireccion } from "./direccion";
 
 /* GET home page(editar_usuarios ejs)*/
 
@@ -42,7 +43,9 @@ export async function getCliente(req: Request, res: Response) {
     try {
         const{body}= req;
        const clienteResponse=await ClienteModel.create(body,{raw:true});
-       res.status(201).json(clienteResponse);
+
+       indexViewDireccion(req, res)
+       //res.status(201).json();
        
     } catch (error) {
        console.log(error);

@@ -38,7 +38,8 @@ export async function readRepartidor(req: Request,res: Response){
     try {
         const{body}= req;
        const repartidorResponse=await RepartidorModel.create(body,{raw:true});
-       res.status(201).json(repartidorResponse);
+       indexViewRepartidor(req, res)
+       //res.status(201).json(repartidorResponse);
     } catch (error) {
        console.log(error);
        res.status(500).json({

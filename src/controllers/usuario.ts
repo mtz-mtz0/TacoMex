@@ -38,7 +38,8 @@ export async function readUsuario(req: Request,res: Response){
     try {
         const{body}= req;
        const usuarioResponse=await UsuarioModel.create(body,{raw:true});
-       res.status(201).json(usuarioResponse);
+       indexViewUsuario(req, res)
+       // res.status(201).json(usuarioResponse);
     } catch (error) {
        console.log(error);
        res.status(500).json({
