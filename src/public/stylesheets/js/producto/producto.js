@@ -1,6 +1,6 @@
 const producto = (() => {
   const $bodyTable = document.getElementById("data");
-  const BASE_URL ="http://localhost:3000/api/producto";
+  const BASE_URL ="/api/producto";
   const $containerTable =document.getElementById("containerTable");
 
   const _getData = async () => {

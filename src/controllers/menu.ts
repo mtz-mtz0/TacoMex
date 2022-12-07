@@ -19,11 +19,11 @@ export async function indexViewProducto(req: Request, res: Response) {
       try {
        // const records= await TablaProducto.findAll(
           const productos = await TablaProducto.findAll({ raw: true })
-
           //{where: { descripcion_pro: 'adrian'  }    }  
           const data = { httpCode: 0, message: "", productos }
-
         res.render("../views/Principal/menu", data);
+     
+     
       } catch (error) {
         console.log(error);
         res.status(500).json({

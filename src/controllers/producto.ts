@@ -47,7 +47,7 @@ export async function readProducto(req: Request, res: Response) {
         "id_Producto", "nombre_pro", "descripcion_pro", "id_fotografia_pro",
         "precio_pro", "categoria_pro", "estatus_pro"],
       raw: true,
-      where
+      where 
     });
     res.status(200).json(productos);
   } catch (error) {
@@ -57,14 +57,6 @@ export async function readProducto(req: Request, res: Response) {
     })
   }
 }
-
-
-
-
-
-
-
-
 
 
 
