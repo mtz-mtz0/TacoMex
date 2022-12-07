@@ -11,3 +11,4 @@ port: 3306,
 });
 
 export default sequelize; 
+
