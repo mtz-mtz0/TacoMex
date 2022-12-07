@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
-import {TablaProducto} from "../models/productos";
+import { TablaProducto } from "../models/productos";
 import db from '../db/connection';
-import {sequelize} from "../db/connection";
+import { sequelize } from "../db/connection";
 import { where } from "sequelize";
 
 
@@ -11,29 +11,29 @@ export async function indexViewProducto(req: Request, res: Response) {
 }
 
 //export async function indexMenu(req: Request, res: Response) {
-  //return res.render('../views/Principal/menu',{title: 'Menu' });}
+//return res.render('../views/Principal/menu',{title: 'Menu' });}
 
 
- 
-    export async function indexMenu(req: Request, res: Response) {
-      try {
-       // const records= await TablaProducto.findAll(
-          const records = await TablaProducto.findAll({ raw: true })
 
-          //{where: { descripcion_pro: 'adrian'  }    }  
-          const data = { httpCode: 0, message: "", records }
+export async function indexMenu(req: Request, res: Response) {
+  try {
+    // const records= await TablaProducto.findAll(
+    const records = await TablaProducto.findAll({ raw: true })
 
-        res.render("../views/Principal/menu", data);
-      } catch (error) {
-        console.log(error);
-        res.status(500).json({
-          msg: 'habla con el administrador plox'
-        })
-      }
-    }
+    //{where: { descripcion_pro: 'adrian'  }    }  
+    const data = { httpCode: 0, message: "", records }
+
+    res.render("../views/Principal/menu", data);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      msg: 'habla con el administrador plox'
+    })
+  }
+}
 
 
-    
+
 
 
 
@@ -82,11 +82,10 @@ export async function createProducto(req: Request, res: Response) {
 //actualizar producto
 //localhost:3000/api/direccion/update/1
 export async function updateProducto(req: Request, res: Response) {
-
   try {
     const { body } = req;
     const { id_Producto } = req.params;
-    
+
     const entity = await TablaProducto.findByPk(id_Producto);
     await entity?.update(body);
     res.status(201).json(entity?.toJSON());
@@ -100,18 +99,16 @@ export async function updateProducto(req: Request, res: Response) {
 
 //eliminar registros: Delete
 //localhost:3000/api/producto/2
-export async function deleteProducto(req: Request,res: Response){
+export async function deleteProducto(req: Request, res: Response) {
   try {
-     const{id_Producto}=req.params;
-     const entity=await TablaProducto.findByPk(id_Producto);
-     await entity?.destroy();
-     res.status(204).json({ok:""});
-
-
+    const { id_Producto } = req.params;
+    const entity = await TablaProducto.findByPk(id_Producto);
+    await entity?.destroy();
+    res.status(204).json({ ok: "" });
   } catch (error) {
-     console.log(error);
-     res.status(500).json({
-         msg:'habla con el administrador'
-        })
-      }
-    }
+    console.log(error);
+    res.status(500).json({
+      msg: 'habla con el administrador'
+    })
+  }
+}
