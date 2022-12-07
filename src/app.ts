@@ -54,6 +54,8 @@ try {
 
 
 middlewares(){
+this.app.use(express.urlencoded({ extended: true }))
+
 this.app.use(morgan('dev'));
 //cors
 this.app.use( cors());

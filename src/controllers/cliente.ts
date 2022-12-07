@@ -4,9 +4,22 @@ import {ClienteModel} from "../models/cliente";
 /* GET home page(editar_usuarios ejs)*/
 
 
+
+
   export async function indexViewCliente(req: Request, res: Response) {
-    return res.render('../views/cliente/cliente');
+    try {
+      const records = await ClienteModel.findAll({ raw: true })
+      const data = { httpCode: 0, message: "", records }
+      //res.render("templates/tutor/tutor-crud", data)
+        res.render('../views/cliente/cliente',data);
+
+      // res.status(201).json(records)
+    } catch (error) {
+      console.log(error)
+    }
   }
+ 
+  
 
 
   
@@ -25,22 +38,18 @@ export async function getCliente(req: Request, res: Response) {
     }
   }
   
-  export async function createCliente(req: Request, res: Response) {
-    const { nombre_cli, apellidoP_cli, apellidoM_cli, sexo_cli, fecha_nac,telefono, id_usuario_cli, id_fotografia_cli, password } = req.body
-    const passwordRandom = Math.random().toString(36).slice(-11)
-//    let password = await bcrypt.hash(passwordRandom, 8)
-    // let password = '123'
-    const{body}= req;
-
+  export async function createCliente(req: Request,res: Response){
     try {
-      await ClienteModel.create(body,{raw:true});
-    
-  
-   
+        const{body}= req;
+       const clienteResponse=await ClienteModel.create(body,{raw:true});
+       res.status(201).json(clienteResponse);
+       
     } catch (error) {
-      console.log(error)
+       console.log(error);
+       res.status(500).json({
+           msg:'habla con el administrador'
+       })
     }
-  
   }
   
   export async function updateCliente(req: Request, res: Response) {

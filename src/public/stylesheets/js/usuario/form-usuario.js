@@ -38,11 +38,11 @@ const formUsuarios = (() => {
           debugger
         const method = $form.getAttribute("method");
         const formData = new FormData($form);
-        if (method.toUpperCase() === "POST") {
+        if (method.toUpperCase() === "") {
           _create(formData);
         }
   
-        if (method === "PUT") {
+        if (method === "POST") {
           _update(formData);
         }
       });
@@ -68,9 +68,8 @@ const formUsuarios = (() => {
       usuario.setVisible(true);
       usuario.getData();
     };
+
   
-
-
 
 
 

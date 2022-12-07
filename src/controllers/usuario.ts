@@ -76,15 +76,16 @@ export async function updateUsuario(req: Request,res: Response){
        const entity=await UsuarioModel.findByPk(id_usuario);
        await entity?.destroy();
        res.status(204).json({ok:""});
-
-
+  
+  
     } catch (error) {
        console.log(error);
        res.status(500).json({
            msg:'habla con el administrador'
-       })
-    }
-  }
+          })
+        }
+      }
+  
 
   
 

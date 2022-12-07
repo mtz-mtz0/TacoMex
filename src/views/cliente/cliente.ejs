@@ -13,17 +13,16 @@
 
 <body>
     <!-- Form EJS -->
-    <form id="formCliente" action="./crud" method="post">
-        <input type="text" name="id_cliente" id="id_cliente">
-        <input type="text" name="nombre_cli" id="nombre_cli" hidden>
-        <input type="text" name="apellidoP_cli" id="apellidoP_cli">
-        <input type="number" name="apellidoM_cli" id="apellidoM_cli">
-        <input type="text" name="sexo_cli" id="sexo_cli">
-        <input type="number" name="fecha_nac" id="fecha_nac">
-        <input type="text" name="telefono" id="telefono">
-        <input type="number" name="id_usuario_cli" id="id_usuario_cli">
-        <input type="text" name="id_fotografia_cli" id="id_fotografia_cli">
-
+    <form id="formCliente" action="./register" method="post">
+        <input type="text" name="nombre_cli" id="nombre_cli" placeholder="nombre cliente">
+        <input type="text" name="apellidoP_cli" id="apellidoP_cli" placeholder="apellido paterno">
+        <input type="text" name="apellidoM_cli" id="apellidoM_cli" placeholder="apellido materno">
+        <input type="text" name="sexo_cli" id="sexo_cli" placeholder="sexo">
+        <input type="text" name="fecha_nac" id="fecha_nac" placeholder="fecha nac">
+        <input type="text" name="telefono" id="telefono" placeholder="telefono">
+        <input type="text" name="id_usuario_cli" id="id_usuario_cli" placeholder="id_usuario">
+        <input type="text" name="id_fotografia_cli" id="id_fotografia_cli" placeholder="id fotografia">
+        <input type="text" name="password" id="password" placeholder="password">
         <button type="submit" id="btnGuardar" class="waves-effect waves-light btn">Guardar</button>
     </form>
 
@@ -45,6 +44,8 @@
                 </tr>
             </th>
         </thead>
+
+
         <tbody>
             <% for(var i=0; i<records.length ;i++){ %>
                 <tr>

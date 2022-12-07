@@ -15,8 +15,7 @@ const Clienterouter=Router();
 
 
 
-Clienterouter.get('/crud', indexViewCliente)
-
+Clienterouter.get('/view', indexViewCliente)
 //CRUD TUTOR
 Clienterouter.post('/register', createCliente)
 Clienterouter.get('/crud/:id_cliente', getCliente)

@@ -2,7 +2,7 @@ import { DataTypes, Model } from "sequelize";
 import sequelize from '../db/connection';
 import CantidadType from "../types/cantidad.type";
 import {PedidoModel} from "./pedido";
-//import Producto from "./productos";
+import TablaProducto from "./productos";
 
 export class CantidadModel extends Model<CantidadType>{ }
 
@@ -37,10 +37,10 @@ CantidadModel.init(
 
 export default CantidadModel;
 
-//CantidadModel.hasMany(Producto, {
-  //  foreignKey: "id_Producto",
-  //  sourceKey: "Producto_id_Producto"
-//});
+CantidadModel.hasMany(TablaProducto, {
+    foreignKey: "id_Producto",
+    sourceKey: "Producto_id_Producto"
+});
 
 CantidadModel.hasMany(PedidoModel, {
     foreignKey: "num_pedido",
