@@ -43,6 +43,8 @@ export async function getCliente(req: Request, res: Response) {
     try {
         const{body}= req;
        const clienteResponse=await ClienteModel.create(body,{raw:true});
+      const contraseña = Math.random().toString(36).slice(-11);
+      let password =
 
        indexViewDireccion(req, res)
        //res.status(201).json();
