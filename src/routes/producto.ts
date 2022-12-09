@@ -1,6 +1,7 @@
-import { Router } from "express";
+
 import {indexViewProducto, readProducto,createProducto, updateProducto, deleteProducto, indexMenu} from "../controllers/producto";
 
+import { Router } from "express";
 const Productorouter=Router();
 
 /* GET home page(editar_usuarios ejs)*/

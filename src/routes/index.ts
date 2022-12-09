@@ -5,7 +5,8 @@ const router = Router();
 
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'TacoMex' });});
+  res.render('index', { title: 'TacoMex' });
+});
 
   
 /*---------------------------------Usuario-----------------------------------*/
