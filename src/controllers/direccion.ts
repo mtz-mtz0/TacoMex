@@ -38,8 +38,11 @@ export async function readDireccion(req: Request,res: Response){
     try {
         const{body}= req;
        const direccionResponse=await DireccionModel.create(body,{raw:true});
-       res.status(201).json(direccionResponse);
-    } catch (error) {
+     //  res.status(201).json(direccionResponse);
+     res.render('index', { title: 'TacoMex' });
+
+    
+      } catch (error) {
        console.log(error);
        res.status(500).json({
            msg:'habla con el administrador'

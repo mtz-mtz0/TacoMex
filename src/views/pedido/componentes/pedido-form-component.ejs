@@ -1,0 +1,74 @@
+<div class="row">
+    <div class="col s12 m4">
+        <br><br><br>
+        <a href="#" class="grey-text text-darken-2 center"><img class="responsive-img"
+                src="https://cdn-icons-png.flaticon.com/512/1365/1365533.png"></a>
+    </div>
+
+    <div class="col s12 m8">
+        <br><br><br>
+        <form id="formPedido" action="./register" method="post" class="col s15">
+            <div class="col s12 m5">
+
+                <div class="input-field col s12">
+                    <input type="text" name="fecha_ped" id="fecha_ped" class="validate" required>
+                    <label for="fecha_ped">Fecha del pedido</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <input type="text" name="cantidadProd_ped" id="cantidadProd_ped" class="validate" required>
+                    <label for="cantidadProd_ped">Cantidad del producto pedido</label>
+                </div>
+               
+                <div class="input-field col s12">
+                    <input type="text" name="montoTotal_ped" id="montoTotal_ped" class="validate" required>
+                    <label for="montoTotal_ped">Monto total </label>
+                </div>
+
+                <div class="input-field col s12">
+                    <input type="text" name="estatus_ped" id="estatus_ped" required>
+                    <label for="estatus_ped">Estatus del pedido</label>
+                </div>
+            </div>
+
+        
+            <div class="col s18 m4">
+                <div class="section">
+                    
+
+                    <div class="input-field col s12">
+                        <input type="text" name="id_local_ped" id="id_local_ped" required>
+                        <label for="id_local_ped">Id del local </label>
+                    </div>
+
+
+                    <div class="input-field col s12">
+                        <input type="text" name="Repartidor_id_repartidor" id="Repartidor_id_repartidor" required>
+                        <label for="Repartidor_id_repartidor">Id del repartidor</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input type="text" name="id_cliente_ped" id="id_cliente_ped" required>
+                        <label for="id_cliente_ped">Id del cliente</label>
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="input-field col s14">
+                    <button type="submit" id="btnGuardar" class="botonDentro">
+                        <span id="span-1">Guardar</span>
+                    </button>
+                </div>
+
+            </div>
+            <br>
+        </form>
+    </div>
+
+</div>
+
+
+</body>
