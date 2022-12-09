@@ -9,6 +9,8 @@ import nodemailer from "nodemailer";
 
 
 
+
+
   export async function indexViewCliente(req: Request, res: Response) {
     try {
       const records = await ClienteModel.findAll({ raw: true })
@@ -21,6 +23,40 @@ import nodemailer from "nodemailer";
     }
   }
  
+
+
+  export async function indexViewLogin(req: Request, res: Response) {
+    try {
+      const records = await ClienteModel.findAll({ raw: true })
+      const data = { httpCode: 0, message: "", records }
+      //res.render("templates/tutor/tutor-crud", data)
+        res.render('../views/Usuario/inicio_sesion',data);
+      // res.status(201).json(records)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+ 
+  
+  export async function indexViewIniciando(req: Request, res: Response) {
+    try {
+      const records = await ClienteModel.findAll({ raw: true })
+      const data = { httpCode: 0, message: "", records }
+      //res.render("templates/tutor/tutor-crud", data)
+        res.render('../',data);
+      // res.status(201).json(records)
+    } catch (error) {
+      
+      res.status(500).json({
+        msg: 'habla con el administrador'
+      })}}
+
+
+
+
+
+
+
   
 
 
@@ -67,9 +103,9 @@ export async function getCliente(req: Request, res: Response) {
        await mailer.sendMail({
           from: ' <tacomex.local@gmail.com>', // sender address
           to: email, // list of receivers
-          subject: "Hellaaaaa", // Subject line
-          text: "Hello world?", // plain text body
-          html: "<b>Hello world? i am adria</b>"+email+' password'+passwordBCRYPT, // html body 
+          subject: "Registro en tacomex", // Subject line
+          text: "BIENVENIDOOO", // plain text body
+          html: "<b>Hola, te registrado en tacomex con el siguiente </b>"+email+' tu contraseña es: '+passwordBCRYPT, // html body 
 
          } )
 
@@ -98,3 +134,6 @@ export async function getCliente(req: Request, res: Response) {
       console.log(error);
     }
   }
+
+
+

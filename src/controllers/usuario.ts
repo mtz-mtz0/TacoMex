@@ -86,6 +86,12 @@ export async function updateUsuario(req: Request,res: Response){
           })
         }
       }
+
+
+
+
+
+      
   
 
   

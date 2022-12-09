@@ -5,6 +5,17 @@ import { sequelize } from "../db/connection";
 import { where } from "sequelize";
 
 
+declare module 'express-session'{
+  export interface SessionData{
+      user:String[]
+  }
+}
+
+
+
+
+
+
 /* GET home page(editar_usuarios ejs)*/
 export async function indexViewProducto(req: Request, res: Response) {
   return res.render('../views/productos/producto-view');
