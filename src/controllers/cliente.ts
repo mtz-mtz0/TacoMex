@@ -1,15 +1,12 @@
 import { Request, Response } from "express";
 import {ClienteModel} from "../models/cliente";
 import { indexViewDireccion } from "./direccion";
-import bcrypt from 'bcryptjs';
+import bcrypt, { compare } from 'bcryptjs';
 import nodemailer from "nodemailer";
+import { createPedido } from "./pedido";
+import comparar from "../middlewares/comparar.contrasenas";
 
 /* GET home page(editar_usuarios ejs)*/
-
-
-
-
-
 
   export async function indexViewCliente(req: Request, res: Response) {
     try {
@@ -25,6 +22,12 @@ import nodemailer from "nodemailer";
  
 
 
+
+
+
+
+
+
   export async function indexViewLogin(req: Request, res: Response) {
     try {
       const records = await ClienteModel.findAll({ raw: true })
@@ -37,19 +40,40 @@ import nodemailer from "nodemailer";
     }
   }
  
-  
-  export async function indexViewIniciando(req: Request, res: Response) {
+
+
+ 
+
+  let comprobarEmail:any, contrasena:any;
+  export async function iniciando(req: Request, res: Response) {
     try {
-      const records = await ClienteModel.findAll({ raw: true })
-      const data = { httpCode: 0, message: "", records }
-      //res.render("templates/tutor/tutor-crud", data)
-        res.render('../',data);
-      // res.status(201).json(records)
-    } catch (error) {
-      
+      const{email,password}= req.body    
+       const cliente= await ClienteModel.findOne({ where:{email:email} }) 
+       
+       await ClienteModel.findOne({ where:{email:email} })
+       .then(result=> contrasena=result?.getDataValue('password'));
+ 
+
+       
+if(cliente){
+
+  const com= bcrypt.compareSync(password, contrasena);
+
+   if(com){
+     res.render('index', { title: 'TacoMex' });
+     // res.status(201).json(records)       
+
+
+    }else{      res.send('<strong>contraseña incorrecta</strong>')}
+
+    }else{      res.send('<strong>Username no existe</strong>')  }
+    
+    }catch (error) {  
       res.status(500).json({
         msg: 'habla con el administrador'
-      })}}
+      })
+    
+    }}
 
 
 
@@ -78,10 +102,9 @@ export async function getCliente(req: Request, res: Response) {
   
   export async function createCliente(req: Request,res: Response){
     
-       //const{body}= req;
+       const{body}= req;
        const {nombre_cli, apellidoP_cli, apellidoM_cli, sexo_cli,
       fecha_nac, telefono, id_usuario_cli, email}= req.body
-       
        
       const passwordBCRYPT = Math.random().toString(36).slice(-11);
        let password = await bcrypt.hash(passwordBCRYPT, 8);
@@ -90,7 +113,7 @@ export async function getCliente(req: Request, res: Response) {
       await ClienteModel.create({nombre_cli, apellidoP_cli, apellidoM_cli, sexo_cli,
         fecha_nac, telefono, id_usuario_cli, email, password});
         
-
+       
         const mailer = nodemailer.createTransport({
           host:"smtp.gmail.com",
           port: 465,
@@ -108,8 +131,6 @@ export async function getCliente(req: Request, res: Response) {
           html: "<b>Hola, te registrado en tacomex con el siguiente </b>"+email+' tu contraseña es: '+passwordBCRYPT, // html body 
 
          } )
-
-
 
        indexViewDireccion(req, res)
        //res.status(201).json();  

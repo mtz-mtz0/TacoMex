@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { indexViewCliente , createCliente, getCliente, updateCliente, deleteCliente, indexViewLogin, indexViewIniciando} from "../controllers/cliente";
+import { indexViewCliente , createCliente, getCliente, updateCliente, deleteCliente, indexViewLogin, iniciando} from "../controllers/cliente";
 
 
 const Clienterouter=Router();
@@ -24,6 +24,6 @@ Clienterouter.put('/crud/:id_cliente', updateCliente)
 Clienterouter.delete('/crud/:id_cliente', deleteCliente)
 
 
-Clienterouter.get('/iniciando', indexViewIniciando)
+Clienterouter.post('/iniciando', iniciando)
 
 export default Clienterouter;
