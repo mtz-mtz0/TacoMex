@@ -13,6 +13,7 @@ let countProduct = 0;
 loadEventListenrs();
 function loadEventListenrs(){
     allContainerCart.addEventListener('click', addProduct);
+
     containerBuyCart.addEventListener('click', deleteProduct);
 }
 
@@ -47,8 +48,6 @@ function deleteProduct(e) {
     loadHtml();
 }
 
-
-
 function readTheContent(product){
     const infoProduct = {
         image: product.querySelector('div img').src,
@@ -80,8 +79,6 @@ function readTheContent(product){
     //console.log(infoProduct);
 }
 
-
-
 function loadHtml(){
     clearHtml();
     buyThings.forEach(product => {
@@ -90,16 +87,18 @@ function loadHtml(){
         row.classList.add('item');
         row.innerHTML = `
             <img src="${image}" alt="">
-            <div class="item-content">     
+            <div class="item-content">
                 <h5>${title}</h5>
                 <h5 class="cart-price">${price}$</h5>
-                <h6>Productos: ${amount}</h6>           
-                </div>
+                <h6>Amount: ${amount}</h6>
+            </div>
             <span class="delete-product" data-id="${id}">X</span>
         `;
 
         containerBuyCart.appendChild(row);
+
         priceTotal.innerHTML = totalCard;
+
         amountProduct.innerHTML = countProduct;
     });
 }

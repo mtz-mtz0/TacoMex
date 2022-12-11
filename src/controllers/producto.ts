@@ -5,11 +5,11 @@ import { sequelize } from "../db/connection";
 import { where } from "sequelize";
 
 
-/*/declare module 'express-session'{
+declare module 'express-session'{
   export interface SessionData{
-      admin:String[]
+      user2:String[]
   }
-}/*
+}
 
 /* GET home page(editar_usuarios ejs)*/
 
@@ -30,8 +30,8 @@ export async function indexMenu(req: Request, res: Response) {
     const records = await TablaProducto.findAll({ raw: true })
 
     //{where: { descripcion_pro: 'adrian'  }    }  
+    
     const data = { httpCode: 0, message: "", records }
-
     res.render("../views/Principal/menu", data);
   } catch (error) {
     console.log(error);

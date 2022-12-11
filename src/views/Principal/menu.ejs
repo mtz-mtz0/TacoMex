@@ -10,7 +10,7 @@
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link rel='stylesheet' href='/stylesheets/css/style.css' >
+       <link rel='stylesheet' href='/stylesheets/css/style.css' >
         <link rel='stylesheet' href='/stylesheets/css/style2.css' >
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -54,32 +54,23 @@
           </div>
         </div>
       </nav>
-        
-      
-      
-      
-
-
                 <!-- Example split danger button -->
-
-
 <body>
     
         <div>
-            <p class="count-product"></p>
-        </div>
-
-        
+            
+            <p class="count-product">0</p>
+        </div>    
         <div class="cart-products" id="products-id">
             <p class="close-btn" onclick="closeBtn()">X</p>
-            <h5>Mi carrito</h5>
+            <h4>Mi carrito</h4>
 
-            <div class="card-items">
+            <div class="card-items" >
             </div>    
-            <h5>Total: <strong class="price-total">0 </strong> $</h5>
-            <button align="center">Hacer pedido</button>
-        </div>
-    
+            <h4>Total: <strong class="price-total">0 </strong> $</h4>
+            <a class="waves-effect waves-light btn">Hacer pedido</a>
+                </div>
+ 
 
     <div class="container center">
         <h5>Productos disponibles</h5>
@@ -90,9 +81,10 @@
     <section class="container">
         <div class="products">      
             <% for(var i=0;i<productos.length;i++){%>
-            <div class="carts">
+           
+         <div class="carts">
                 <div>
-                    <img src="./images/products/<%=productos[i]%>.jpg" alt="">
+                    <img src="/stylesheets/images/productos/<%=productos[i].id_Producto%>.jpg" alt="">
                     <p><span><%=productos[i].precio_pro%></span>$</p>
                 </div>
                 <p class="title"><%=productos[i].nombre_pro%></p>
@@ -100,7 +92,7 @@
                 <a href="" data-id="<%=productos[i].id_Producto%>" class="btn-add-cart">Agregar al carrito</a>
             </div>
             <% }%>
-
+        </div>
         </div>
     </section>
 
