@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node src/index.ts",
     "clean": "rimraf ./dist",
-    "start": "npm run build && npm run copy-files && node dist/index.js",
+    "start": "node dist/app.js",
     "init": "npm install -D -s"
   },
   "keywords": [],
