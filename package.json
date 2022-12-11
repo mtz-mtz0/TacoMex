@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node src/index.ts",
     "clean": "rimraf ./dist",
-    "start": "node dist/app.js",
+    "start": "node ./dist",
     "init": "npm install -D -s"
   },
   "keywords": [],
