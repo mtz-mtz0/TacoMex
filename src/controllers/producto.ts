@@ -5,28 +5,18 @@ import { sequelize } from "../db/connection";
 import { where } from "sequelize";
 
 
-declare module 'express-session'{
+/*/declare module 'express-session'{
   export interface SessionData{
       admin:String[]
   }
-}
-
-
-
-
-
+}/*
 
 /* GET home page(editar_usuarios ejs)*/
 
 export async function indexViewProducto(req: Request, res: Response) {
-if(req.session.admin){
-const adminData=req.session.admin[0]
-  return res.render('../views/productos/producto-view', {adminData});
+  return res.render('../views/productos/producto-view',);
 } 
-else{
-res.send('<strong> TU NO ERES ADMIN</strong>')
-}
-}
+
 
 
 //export async function indexMenu(req: Request, res: Response) {

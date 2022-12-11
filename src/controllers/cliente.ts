@@ -5,18 +5,10 @@ import bcrypt, { compare } from 'bcryptjs';
 import nodemailer from "nodemailer";
 import { createPedido } from "./pedido";
 import comparar from "../middlewares/comparar.contrasenas";
+import { SesionModel } from "../models/sesion.model";
+//import {admin} from "../controllers/producto";
 
 /* GET home page(editar_usuarios ejs)*/
-declare module 'express-session'{
-  export interface SessionData{
-    user: string[]
-  }
-
-}
-
-
-
-
 
 export async function indexViewCliente(req: Request, res: Response) {
   try {
@@ -29,10 +21,6 @@ export async function indexViewCliente(req: Request, res: Response) {
     console.log(error)
   }
 }
-
-
-
-
 
 
 
@@ -75,22 +63,18 @@ export async function iniciando(req: Request, res: Response) {
  
 
       } else if (com && id_usuario_cli=="35") {
-       
+
      
-    
-       
-       return res.render('../views/pedido/pedido-view');
+          return res.render('../views/pedido/pedido-view');
+      
+   
+
       }
-
-
+      
       else { res.send('<strong>contraseña incorrecta</strong>') }
-
-
     } else {
       res.send('<strong>usuario no existe</strong>')
     }
-    //res.render('<strong>Username no existe</strong>',{ alert:true, alertTitle: 'ERROR', alertMessage:"El usuario no existe"})  }
-
   } catch (error) {
     res.status(500).json({
       msg: 'habla con el administrador'
@@ -150,7 +134,7 @@ export async function createCliente(req: Request, res: Response) {
       to: email, // list of receivers
       subject: "Registro en tacomex", // Subject line
       text: "BIENVENIDOOO", // plain text body
-      html: "<b>Hola, te registrado en tacomex con el siguiente email:</b>" + email + ' tu contraseña es: ' + passwordBCRYPT, // html body 
+      html: "<b>Hola, te registrado en tacomex con el siguiente email: </b>" + email + ' tu contraseña es: ' + passwordBCRYPT, // html body 
 
     })
 
@@ -164,8 +148,16 @@ export async function createCliente(req: Request, res: Response) {
   }
 }
 
+
+
+
 export async function updateCliente(req: Request, res: Response) {
 }
+
+
+
+
+
 export async function deleteCliente(req: Request, res: Response) {
   try {
     const { id_cliente } = req.params;
