@@ -13,6 +13,8 @@ export async function indexViewProducto(req: Request, res: Response) {
   //return res.render('../views/Principal/menu',{title: 'Menu' });}
 
 
+ 
+  
     export async function indexMenu(req: Request, res: Response) {
       try {
        // const records= await TablaProducto.findAll(
