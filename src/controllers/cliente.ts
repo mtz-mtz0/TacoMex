@@ -46,32 +46,22 @@ export async function iniciando(req: Request, res: Response) {
   try {
     const { email, password} = req.body
     const cliente = await ClienteModel.findOne({ where: { email: email } })
-
-
     await ClienteModel.findOne({ where: { email: email } })
       .then(result => contrasena = result?.getDataValue('password'));
       
     await ClienteModel.findOne({ where: { email: email } })
       .then(result => id_usuario_cli = result?.getDataValue('id_usuario_cli'));
 
-    console.log(id_usuario_cli);
-    
+    console.log(id_usuario_cli);  
     if (cliente) {
+
       const com = bcrypt.compareSync(password, contrasena);
       if (com && id_usuario_cli=="23") {
+        
         res.render('index', { title: 'TacoMex' });
- 
-
       } else if (com && id_usuario_cli=="35") {
-
-     
           return res.render('../views/pedido/pedido-view');
-      
-   
-
-      }
-      
-      else { res.send('<strong>contraseña incorrecta</strong>') }
+      } else { res.send('<strong>contraseña incorrecta</strong>') }
     } else {
       res.send('<strong>usuario no existe</strong>')
     }
