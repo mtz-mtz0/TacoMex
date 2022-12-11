@@ -7,7 +7,7 @@ import { where } from "sequelize";
 
 declare module 'express-session'{
   export interface SessionData{
-      user:String[]
+      admin:String[]
   }
 }
 
@@ -17,9 +17,17 @@ declare module 'express-session'{
 
 
 /* GET home page(editar_usuarios ejs)*/
+
 export async function indexViewProducto(req: Request, res: Response) {
-  return res.render('../views/productos/producto-view');
+if(req.session.admin){
+const adminData=req.session.admin[0]
+  return res.render('../views/productos/producto-view', {adminData});
+} 
+else{
+res.send('<strong> TU NO ERES ADMIN</strong>')
 }
+}
+
 
 //export async function indexMenu(req: Request, res: Response) {
 //return res.render('../views/Principal/menu',{title: 'Menu' });}
@@ -75,6 +83,7 @@ export async function readProducto(req: Request, res: Response) {
 
 //insertar Producto
 export async function createProducto(req: Request, res: Response) {
+
   try {
     const { body } = req;
     const productoResponse = await TablaProducto.create(body, { raw: true });
