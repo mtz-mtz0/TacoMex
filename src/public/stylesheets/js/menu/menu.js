@@ -96,6 +96,7 @@ function loadHtml(){
         `;
 
         containerBuyCart.appendChild(row);
+    console.log(containerBuyCart);
 
         priceTotal.innerHTML = totalCard;
 
