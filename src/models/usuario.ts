@@ -17,12 +17,6 @@ UsuarioModel.init(
         allowNull: false,
         unique:true
       },
-
-      contraseña: {
-        type: DataTypes.STRING(40),
-        allowNull: false,
-      },
-  
       tipo_us:{
         type: DataTypes.STRING(30),
         allowNull: false,

@@ -16,7 +16,7 @@ export async function readUsuario(req: Request,res: Response){
         const{query:where}=req
         const usuarios= await UsuarioModel.findAll({
          attributes:[
-            "id_usuario", "usuario_us", "contraseña","tipo_us"
+            "id_usuario", "usuario_us","tipo_us"
         ],
             raw:true,
             where   
@@ -91,7 +91,7 @@ export async function updateUsuario(req: Request,res: Response){
 
 
 
-      
+
   
 
   
