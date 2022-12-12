@@ -22,6 +22,8 @@ header{
     margin: auto;
     align-items: center;
     position: relative;
+    width: 500px;
+    height: 70px;
 }
 .header-section div{
     position: relative;
