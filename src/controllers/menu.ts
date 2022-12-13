@@ -16,6 +16,7 @@ export async function indexViewProducto(req: Request, res: Response) {
  
   
     export async function indexMenu(req: Request, res: Response) {
+
       try {
        // const records= await TablaProducto.findAll(
           const productos = await TablaProducto.findAll({ raw: true })
