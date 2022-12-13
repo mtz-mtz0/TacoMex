@@ -25,5 +25,7 @@ SesionModel.init(
   {
     sequelize,
     tableName: "sesion",
+//    timestamps: false//Para que no se agreguen los campos CreateAt ni UpdateAt
+
   }
 );

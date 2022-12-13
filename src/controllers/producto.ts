@@ -23,15 +23,16 @@ export async function indexViewProducto(req: Request, res: Response) {
 //return res.render('../views/Principal/menu',{title: 'Menu' });}
 
 
-
 export async function indexMenu(req: Request, res: Response) {
   try {
+    req.session.user2=["carrito"];
+
     // const records= await TablaProducto.findAll(
     const records = await TablaProducto.findAll({ raw: true })
 
     //{where: { descripcion_pro: 'adrian'  }    }  
-    
-    const data = { httpCode: 0, message: "", records }
+
+    const data = { httpCode: 0, message: "", records}
     res.render("../views/Principal/menu", data);
   } catch (error) {
     console.log(error);

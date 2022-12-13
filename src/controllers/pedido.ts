@@ -10,6 +10,9 @@ export async function indexViewPedido(req: Request, res: Response) {
   return res.render('../views/pedido/pedido-view');
 }
 
+export async function indexViewPedidoC(req: Request, res: Response) {
+  return res.render('../views/pedido/pedidoC-view');
+}
 
 //muestra todos los usuarios
 //localhost:3000/api/producto 

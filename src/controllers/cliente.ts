@@ -10,6 +10,12 @@ import { SesionModel } from "../models/sesion.model";
 
 /* GET home page(editar_usuarios ejs)*/
 
+
+
+
+
+
+
 export async function indexViewCliente(req: Request, res: Response) {
   try {
     const records = await ClienteModel.findAll({ raw: true })
@@ -40,26 +46,39 @@ export async function indexViewLogin(req: Request, res: Response) {
 
 
 
-
-let contrasena: any, id_usuario_cli:any;
+var id_cli:any;
+let contrasena: any, id_usuario_cli:any, datos:any;
 export async function iniciando(req: Request, res: Response) {
   try {
     const { email, password} = req.body
     const cliente = await ClienteModel.findOne({ where: { email: email } })
+
     await ClienteModel.findOne({ where: { email: email } })
       .then(result => contrasena = result?.getDataValue('password'));
       
     await ClienteModel.findOne({ where: { email: email } })
       .then(result => id_usuario_cli = result?.getDataValue('id_usuario_cli'));
 
+   
+
+const usuarioResponse=await ClienteModel.findOne({raw:true, where:{email}})
+const user= JSON.parse(JSON.stringify(usuarioResponse))
+
     console.log(id_usuario_cli);  
     if (cliente) {
 
       const com = bcrypt.compareSync(password, contrasena);
       if (com && id_usuario_cli=="23") {
-        
-        res.render('index', { title: 'TacoMex' });
+       
+        const id_cliente=user["id_cliente"];
+        const sessionRegistro= await SesionModel.create({id_cliente},{raw:true})
+        req.session.user2=user._id;
+
+        const data={httpCode:0,user}
+        res.render('index',data);
+
       } else if (com && id_usuario_cli=="35") {
+
           return res.render('../views/pedido/pedido-view');
       } else { res.send('<strong>contraseña incorrecta</strong>') }
     } else {

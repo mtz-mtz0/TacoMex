@@ -7,8 +7,13 @@ declare module "express-session" {
   interface SessionData {
     user: cliente,
     idSesion:SesionType,
+
   }
 }
+
+
+
+
 
 export const sessionConfig = session({
   name: "session-cookie",

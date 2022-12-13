@@ -43,15 +43,15 @@ require('dotenv').config({path:'./.env'});
       }
 
 
-//async dbConnection(){
+async dbConnection(){
 
-//try {
-  //await sequelize .authenticate();
-  //console.log('Database online');
-//} catch (error) {
- //   throw new Error( 'error' );
-//}
-//}
+try {
+  await sequelize .authenticate();
+  console.log('Database online');
+} catch (error) {
+   throw new Error( 'error' );
+}
+}
 
 
 middlewares(){
@@ -66,10 +66,16 @@ this.app.use(express.json());
 this.app.use(express.static('public'));
 
 this.app.use(session({
-  secret: 'secretkey',
-  resave: false,
-  saveUninitialized: false,
-  cookie: { sameSite: 'strict' }
+  name: "session-cookie",
+  secret: "secreto123",
+  resave: true,
+  saveUninitialized: true,
+  cookie: {
+    secure: false,
+    httpOnly: true,
+    signed: true,
+    maxAge: 5 * (60 * 1000),
+  },
 }))
 }
 
@@ -101,6 +107,7 @@ global(){
 
 
 start(){
+//  await sequelize.sync({force:true})  
 this.app.listen(this.app.get('port'), () => {
 console.log('Server on port', this.app.get('port'));
 
