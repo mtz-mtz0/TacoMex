@@ -42,8 +42,10 @@ class Application{
 async dbConnection(){
 
 try {
-  
   await sequelize .authenticate();
+
+  //await sequelize.sync();
+
   console.log('Database online');
 } catch (error) {
     throw new Error( 'error' );
