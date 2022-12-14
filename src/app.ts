@@ -37,11 +37,7 @@ require('dotenv').config({path:'./.env'});
 
     settings() {
       this.app.set("port", process.env.PORT || 3000);
-      this.app.set("db_host", process.env.PORT || 'localhost');
-      this.app.set("db_user", process.env.PORT || 'root');
-      this.app.set("db_password", process.env.PORT || 'damian');
-      this.app.set("db_name", process.env.PORT || 'tacomex');
-      this.app.set("db_port", process.env.PORT || '3306');
+     
       this.app.set("view engine", "ejs");
       this.app.set('views', path.join(__dirname, './views'));
       this.app.use(express.static(path.join(__dirname, 'public')));
