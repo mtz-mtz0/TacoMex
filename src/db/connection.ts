@@ -1,9 +1,9 @@
 import {Sequelize}from "sequelize";
 
-export const sequelize= new Sequelize('tacomex','root','password',{
+export const sequelize= new Sequelize('taco','postgres','password',{
 host:'localhost',
-dialect:'mysql',
-port: 3306,
+dialect:'postgres',
+port: 5432,
 
 //dialectOptions:{
 //encrypt:true,},
