@@ -10,3 +10,4 @@ Repartidorrouter.post("/register", repartidor_1.createRepartidor);
 Repartidorrouter.post("/update/:id_repartidor", repartidor_1.updateRepartidor);
 Repartidorrouter.delete("/:id_repartidor", repartidor_1.deleteRepartidor);
 exports.default = Repartidorrouter;
+//# sourceMappingURL=repartidor.js.map

@@ -73,3 +73,4 @@ ClienteModel.hasOne(usuario_1.UsuarioModel, {
 // foreignKey: "id_fotografia",
 //sourceKey: "id_fotografia_cli"
 //});
+//# sourceMappingURL=cliente.js.map

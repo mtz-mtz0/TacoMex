@@ -53,3 +53,4 @@ TablaProducto.hasMany(fotografia_1.FotografiaModel, {
     foreignKey: "id_fotografia",
     sourceKey: "id_fotografia_pro"
 });
+//# sourceMappingURL=productos.js.map

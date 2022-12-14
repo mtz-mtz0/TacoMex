@@ -64,3 +64,4 @@ PedidoModel.hasMany(cliente_1.ClienteModel, {
     foreignKey: "id_cliente",
     sourceKey: "id_cliente_ped",
 });
+//# sourceMappingURL=pedido.js.map

@@ -19,3 +19,4 @@ Clienterouter.put('/crud/:id_cliente', cliente_1.updateCliente);
 Clienterouter.delete('/crud/:id_cliente', cliente_1.deleteCliente);
 Clienterouter.post('/iniciando', cliente_1.iniciando);
 exports.default = Clienterouter;
+//# sourceMappingURL=cliente.js.map

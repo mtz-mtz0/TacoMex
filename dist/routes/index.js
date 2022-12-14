@@ -55,3 +55,4 @@ router.get('/views/repartidor/entregas', function (req, res, next) {
     res.render('../views/repartidor/entregas', { title: 'Entregas' });
 });
 exports.default = router;
+//# sourceMappingURL=index.js.map

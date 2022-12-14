@@ -10,3 +10,4 @@ Pedidorouter.post("/register", pedido_1.createPedido);
 Pedidorouter.post("/update/:num_pedido", pedido_1.updatePedido);
 Pedidorouter.delete("/:num_pedido", pedido_1.deletePedido);
 exports.default = Pedidorouter;
+//# sourceMappingURL=pedido.js.map

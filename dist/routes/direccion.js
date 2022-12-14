@@ -10,3 +10,4 @@ Direccionrouter.post("/register2", direccion_1.createDireccion);
 Direccionrouter.post("/update/:id_Direccion", direccion_1.updateDireccion);
 Direccionrouter.delete("/:id_Direccion", direccion_1.deleteDireccion);
 exports.default = Direccionrouter;
+//# sourceMappingURL=direccion.js.map

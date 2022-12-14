@@ -100,3 +100,4 @@ function deleteUsuario(req, res) {
     });
 }
 exports.deleteUsuario = deleteUsuario;
+//# sourceMappingURL=usuario.js.map

@@ -85,3 +85,4 @@ class Application {
     }
 }
 exports.default = Application;
+//# sourceMappingURL=app.js.map

@@ -42,3 +42,4 @@ dir_clienteModel.hasMany(direccion_1.DireccionModel, {
     foreignKey: "id_Direccion",
     sourceKey: "Direccion_id_Direccion"
 });
+//# sourceMappingURL=dir_cliente.js.map

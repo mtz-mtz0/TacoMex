@@ -37,3 +37,4 @@ function indexMenu(req, res) {
     });
 }
 exports.indexMenu = indexMenu;
+//# sourceMappingURL=menu.js.map

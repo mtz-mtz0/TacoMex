@@ -47,3 +47,4 @@ LocalModel.hasMany(usuario_1.UsuarioModel, {
     foreignKey: "id_usuario",
     sourceKey: "id_usuario_loc",
 });
+//# sourceMappingURL=local.js.map

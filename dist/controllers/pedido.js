@@ -99,3 +99,4 @@ function deletePedido(req, res) {
     });
 }
 exports.deletePedido = deletePedido;
+//# sourceMappingURL=pedido.js.map

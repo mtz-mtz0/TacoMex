@@ -10,3 +10,4 @@ Usuariorouter.post("/update/:id_usuario", usuario_1.updateUsuario);
 Usuariorouter.delete("/:id_usuario", usuario_1.deleteUsuario);
 Usuariorouter.post("/register", usuario_1.createUsuarios);
 exports.default = Usuariorouter;
+//# sourceMappingURL=usuarios.js.map

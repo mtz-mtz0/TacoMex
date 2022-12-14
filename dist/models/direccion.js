@@ -41,3 +41,4 @@ DireccionModel.init({
     timestamps: false,
     tableName: "direccion",
 });
+//# sourceMappingURL=direccion.js.map

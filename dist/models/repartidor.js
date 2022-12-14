@@ -56,3 +56,4 @@ RepartidorModel.hasMany(usuario_1.UsuarioModel, {
     foreignKey: "id_usuario",
     sourceKey: "id_usuario_rep"
 });
+//# sourceMappingURL=repartidor.js.map

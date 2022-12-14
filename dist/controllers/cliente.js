@@ -159,3 +159,4 @@ function deleteCliente(req, res) {
     });
 }
 exports.deleteCliente = deleteCliente;
+//# sourceMappingURL=cliente.js.map

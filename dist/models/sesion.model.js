@@ -28,3 +28,4 @@ SesionModel.init({
     sequelize: connection_1.default,
     tableName: "sesion",
 });
+//# sourceMappingURL=sesion.model.js.map

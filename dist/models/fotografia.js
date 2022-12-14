@@ -30,3 +30,4 @@ FotografiaModel.init({
     timestamps: false,
     tableName: "fotografia",
 });
+//# sourceMappingURL=fotografia.js.map

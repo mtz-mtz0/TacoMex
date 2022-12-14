@@ -11,3 +11,4 @@ Productorouter.post("/update/:id_Producto", producto_1.updateProducto);
 Productorouter.delete("/:id_Producto", producto_1.deleteProducto);
 //Productorouter.get("/view", indexMenu);
 exports.default = Productorouter;
+//# sourceMappingURL=producto.js.map

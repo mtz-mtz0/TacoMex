@@ -29,3 +29,4 @@ UsuarioModel.init({
     timestamps: false,
     tableName: "usuario",
 });
+//# sourceMappingURL=usuario.js.map

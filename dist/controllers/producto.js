@@ -126,3 +126,4 @@ function deleteProducto(req, res) {
     });
 }
 exports.deleteProducto = deleteProducto;
+//# sourceMappingURL=producto.js.map

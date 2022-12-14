@@ -7,3 +7,4 @@ const app_1 = __importDefault(require("./app"));
 //starting the server
 const app = new app_1.default();
 app.start();
+//# sourceMappingURL=index.js.map

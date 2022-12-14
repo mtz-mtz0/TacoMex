@@ -38,3 +38,4 @@ CantidadModel.hasMany(pedido_1.PedidoModel, {
     foreignKey: "num_pedido",
     sourceKey: "Pedido_num_pedido"
 });
+//# sourceMappingURL=cantidad.js.map

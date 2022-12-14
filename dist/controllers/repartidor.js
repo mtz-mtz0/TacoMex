@@ -101,3 +101,4 @@ function deleteRepartidor(req, res) {
     });
 }
 exports.deleteRepartidor = deleteRepartidor;
+//# sourceMappingURL=repartidor.js.map
