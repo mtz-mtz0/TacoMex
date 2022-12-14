@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { application } from 'express';
 import morgan from 'morgan';
 import path from 'path';
 import indexRouter from "./routes/index";
@@ -14,6 +14,7 @@ import sequelize  from './db/connection' ;
 import dotenv from "dotenv";
 import flash from 'connect-flash';
 import session from 'express-session';
+import Pool from 'mysql2/typings/mysql/lib/Pool';
 
 
 class Application{
@@ -36,6 +37,11 @@ require('dotenv').config({path:'./.env'});
 
     settings() {
       this.app.set("port", process.env.PORT || 3000);
+      this.app.set("db_host", process.env.PORT || 'localhost');
+      this.app.set("db_user", process.env.PORT || 'root');
+      this.app.set("db_password", process.env.PORT || 'damian');
+      this.app.set("db_name", process.env.PORT || 'tacomex');
+      this.app.set("db_port", process.env.PORT || '3306');
       this.app.set("view engine", "ejs");
       this.app.set('views', path.join(__dirname, './views'));
       this.app.use(express.static(path.join(__dirname, 'public')));
@@ -118,5 +124,6 @@ console.log('Server on port', this.app.get('port'));
 
 
 }
+
 
 export default Application;
