@@ -4,8 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build":"tsc",
     "dev": "ts-node src/index.ts",
-    "clean": "rimraf ./dist"
+    "clean": "rimraf ./dist",
+    "start": "npm run build && npm run copy-files && node dist/index.js",
+    "init": "npm install -D -s",
+    "copy-files": "npm run copy-views && npm run copy-public",
+    "copy-views": "copyfiles -u 1 \"./src/views/*/.ejs\" \"dist\"",
+    "copy-public": "copyfiles -u 1 \"./src/**/*.*\" \"dist\""
   },
   "keywords": [],
   "author": "",
@@ -41,7 +47,11 @@
     "nodemailer": "^6.8.0",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
+    "pg": "^8.8.0",
+    "postgres": "^3.3.2",
     "rimraf": "^3.0.2",
     "sequelize": "^6.25.8"
+
+
   }
 }
