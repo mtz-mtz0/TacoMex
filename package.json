@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build":"tsc",
+    "build": "tsc",
     "dev": "ts-node src/index.ts",
     "clean": "rimraf ./dist",
     "start": "npm run build && npm run copy-files && node dist/index.js",
@@ -37,6 +37,6 @@
     "pg": "^8.8.0",
     "postgres": "^3.3.2",
     "rimraf": "^3.0.2",
-    "sequelize": "^6.25.8"
+    "sequelize": "^6.27.0"
   }
 }
