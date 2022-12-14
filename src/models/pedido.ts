@@ -1,5 +1,5 @@
 import { DataTypes, Model } from "sequelize";
-import sequelize from "../db/connection";
+import {sequelize} from "../db/connection";
 import PedidoType from "../types/pedido.type";
 import { ClienteModel } from "./cliente";
 import {LocalModel} from "./local";
@@ -56,18 +56,18 @@ PedidoModel.init(
 );
 
 
-PedidoModel.hasMany(LocalModel, {
-  foreignKey: "id_Local",
-  sourceKey: "id_local_ped",
-});
+// PedidoModel.hasMany(LocalModel, {
+//   foreignKey: "id_Local",
+//   sourceKey: "id_local_ped",
+// });
 
-PedidoModel.hasMany(RepartidorModel, {
-  foreignKey: "id_repartidor",
-  sourceKey: "Repartidor_id_repartidor",
-});
+// PedidoModel.hasMany(RepartidorModel, {
+//   foreignKey: "id_repartidor",
+//   sourceKey: "Repartidor_id_repartidor",
+// });
 
 
-PedidoModel.hasMany(ClienteModel, {
-  foreignKey: "id_cliente",
-  sourceKey: "id_cliente_ped",
-});
+// PedidoModel.hasMany(ClienteModel, {
+//   foreignKey: "id_cliente",
+//   sourceKey: "id_cliente_ped",
+// });

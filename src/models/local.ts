@@ -1,6 +1,6 @@
 import { DataTypes, Model } from "sequelize";
-import sequelize from "../db/connection";
-import db from "../db/connection";
+import {sequelize} from "../db/connection";
+// import db from "../db/connection";
 import LocalType from "../types/local.type";
 import { DireccionModel } from "./direccion";
 import { UsuarioModel } from "./usuario";
@@ -45,14 +45,14 @@ LocalModel.init(
   }
 );
 
-LocalModel.hasMany(DireccionModel, {
-  foreignKey: "id_Direccion",
-  sourceKey: "id_direccion_loc",
-});
+// LocalModel.hasMany(DireccionModel, {
+//   foreignKey: "id_Direccion",
+//   sourceKey: "id_direccion_loc",
+// });
 
 
 
-LocalModel.hasMany(UsuarioModel, {
-  foreignKey: "id_usuario",
-  sourceKey: "id_usuario_loc",
-});
+// LocalModel.hasMany(UsuarioModel, {
+//   foreignKey: "id_usuario",
+//   sourceKey: "id_usuario_loc",
+// });

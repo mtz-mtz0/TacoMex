@@ -1,5 +1,5 @@
 import { DataTypes, Model } from "sequelize";
-import sequelize from '../db/connection';
+import {sequelize} from '../db/connection';
 import RepartidorType from "../types/repartidor.type";
 import { FotografiaModel } from "./fotografia";
 import { UsuarioModel } from "./usuario";
@@ -58,12 +58,12 @@ RepartidorModel.init(
 
 export default RepartidorModel;
 
-RepartidorModel.hasMany(FotografiaModel, {
-  foreignKey: "id_fotografia",
-  sourceKey: "id_fotografia_rep"
-});
+// RepartidorModel.hasMany(FotografiaModel, {
+//   foreignKey: "id_fotografia",
+//   sourceKey: "id_fotografia_rep"
+// });
 
-RepartidorModel.hasMany(UsuarioModel, {
-  foreignKey: "id_usuario",
-  sourceKey: "id_usuario_rep"
-});
+// RepartidorModel.hasMany(UsuarioModel, {
+//   foreignKey: "id_usuario",
+//   sourceKey: "id_usuario_rep"
+// });

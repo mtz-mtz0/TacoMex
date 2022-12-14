@@ -1,5 +1,5 @@
 import { DataTypes, Model } from "sequelize";
-import sequelize from '../db/connection';
+import {sequelize} from '../db/connection';
 import Dir_clienteType from "../types/dir_cliente.type";
 import {ClienteModel} from "./cliente";
 import {DireccionModel} from "./direccion";
@@ -14,7 +14,6 @@ export class dir_clienteModel extends Model<Dir_clienteType>{}
 {
   Direccion_id_Direccion: {
     type: DataTypes.INTEGER,
-    autoIncrement: true,
     allowNull: false,
   },
   Cliente_id_cliente: {
@@ -35,17 +34,17 @@ export class dir_clienteModel extends Model<Dir_clienteType>{}
 //ProveedoresModel.hasMany(ProductosModel,{foreignKey:"id_Proveedor"});
 //ProductosModel.belongsTo(ProveedoresModel,{foreignKey:"id_Proveedor"});
 
-dir_clienteModel.hasMany(ClienteModel, {
-  foreignKey: "id_cliente",
-  sourceKey: "Cliente_id_cliente"
-});
+// dir_clienteModel.hasMany(ClienteModel, {
+//   foreignKey: "id_cliente",
+//   sourceKey: "Cliente_id_cliente"
+// });
 
 
 
-dir_clienteModel.hasMany(DireccionModel, {
-  foreignKey: "id_Direccion",
-  sourceKey: "Direccion_id_Direccion"
-});
+// dir_clienteModel.hasMany(DireccionModel, {
+//   foreignKey: "id_Direccion",
+//   sourceKey: "Direccion_id_Direccion"
+// });
 
 
 
