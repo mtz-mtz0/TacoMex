@@ -1,5 +1,5 @@
 import {Sequelize}from "sequelize";
-export const sequelize= new Sequelize('tacomex','root','password',{host:'localhost',
+export const sequelize= new Sequelize('tacomex','root','damian',{host:'localhost',
 dialect:'mysql',
 port: 3306,
 
