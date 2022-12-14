@@ -14,8 +14,8 @@
     "start": "npm run build && npm run copy-files && node dist/index.js",
     "init": "npm install -D -s",
     "copy-files": "npm run copy-views && npm run copy-public",
-    "copy-views": "copyfiles -u 1 \"./src/views/**/*.ejs\" \"dist\"",
-    "copy-public": "copyfiles -u 1 \"./src/public/**/*.*\" \"dist\""
+    "copy-views": "copyfiles -u 1 \"./src/views/*/.ejs\" \"dist\"",
+    "copy-public": "copyfiles -u 1 \"./src/*/.*\" \"dist\""
   },
   "keywords": [],
   "author": "",
