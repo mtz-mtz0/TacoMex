@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node src/index.js",
+    "dev": "nodemon src/index.js",
     "clean": "rimraf dist",
     "start": "npm run build && npm run copy-files && node dist/index.js",
     "init": "npm install -D -s",
@@ -18,7 +18,7 @@
     "copy-public": "copyfiles -u 1 \"./src//.\" \"dist\""
   },
   "keywords": [],
-  "author": "",
+  "author": "DamianBautista",
   "license": "ISC",
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
