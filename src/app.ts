@@ -23,13 +23,13 @@ class Application{
     constructor(){
         this.app= express();
         this.settings();
-        //this.dbConnection();
+        this.dbConnection();
         this.middlewares();
         //definir rutas
         this.routes();
-        this.global();
+        // this.global();
      //   dotenv.config();
-require('dotenv').config({path:'./.env'});
+// require('dotenv').config({path:'./.env'});
 
     }
 

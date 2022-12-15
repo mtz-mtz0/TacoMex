@@ -1,11 +1,14 @@
 import {Sequelize}from "sequelize";
-export const sequelize= new Sequelize('tacomex','root','password',{host:'localhost',
+export const sequelize= new Sequelize('railway','root','SFEQz0cgi0GDhpC9gkon',{host:'containers-us-west-166.railway.app',
 dialect:'mysql',
-port: 3306,
-
-                                               //dialectOptions:{
-                                                //encrypt:true,},
-                                                //logging: false,
+port: 5992,
+dialectOptions: {
+  encrypt: true,
+  ssl: {
+     rejectUnauthorized: false,
+   },
+},
+logging:false
 });
  
 export default sequelize; 
