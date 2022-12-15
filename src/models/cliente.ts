@@ -52,7 +52,7 @@ ClienteModel.init( {
     },
     id_usuario_cli: {
       type: DataTypes.INTEGER,
-      defaultValue: '35',
+      defaultValue: '23',
       allowNull: true,
     },
 
