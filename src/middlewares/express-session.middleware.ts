@@ -12,9 +12,6 @@ declare module "express-session" {
 }
 
 
-
-
-
 export const sessionConfig = session({
   name: "session-cookie",
   secret: "secreto123",
