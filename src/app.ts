@@ -46,7 +46,7 @@ try {
 
   //await sequelize.sync();
 
-  console.log('Database online');
+  console.log('Conexion exitosa a bd remota');
 } catch (error) {
     throw new Error( 'error' );
 }
