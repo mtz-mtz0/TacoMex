@@ -68,7 +68,7 @@ const user= JSON.parse(JSON.stringify(usuarioResponse))
     if (cliente) {
 
       const com = bcrypt.compareSync(password, contrasena);
-      if (com && id_usuario_cli=="23") {
+      if (com && id_usuario_cli=="35") {
        
         const id_cliente=user["id_cliente"];
         const sessionRegistro= await SesionModel.create({id_cliente},{raw:true})
@@ -77,7 +77,7 @@ const user= JSON.parse(JSON.stringify(usuarioResponse))
         const data={httpCode:0,user}
         res.render('index',data);
 
-      } else if (com && id_usuario_cli=="35") {
+      } else if (com && id_usuario_cli=="23") {
 
           return res.render('../views/pedido/pedido-view');
       } else { res.send('<strong>contraseña incorrecta</strong>') }
