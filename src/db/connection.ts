@@ -1,7 +1,7 @@
 import {Sequelize}from "sequelize";
-export const sequelize= new Sequelize('railway','root','SFEQz0cgi0GDhpC9gkon',{host:'containers-us-west-166.railway.app',
+export const sequelize= new Sequelize('railway','root','0KkeV1CqCmp1MBqpUEWk',{host:'containers-us-west-132.railway.app',
 dialect:'mysql',
-port: 5992,
+port: 7583,
 dialectOptions: {
   encrypt: true,
   ssl: {
