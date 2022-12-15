@@ -25,7 +25,6 @@ export async function indexViewProducto(req: Request, res: Response) {
 
 export async function indexMenu(req: Request, res: Response) {
   try {
-    req.session.user2=["carrito"];
 
     // const records= await TablaProducto.findAll(
     const records = await TablaProducto.findAll({ raw: true })

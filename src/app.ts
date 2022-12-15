@@ -68,8 +68,8 @@ this.app.use(express.static('public'));
 this.app.use(session({
   name: "session-cookie",
   secret: "secreto123",
-  resave: true,
-  saveUninitialized: true,
+  resave: false,
+  saveUninitialized: false,
   cookie: {
     secure: false,
     httpOnly: true,

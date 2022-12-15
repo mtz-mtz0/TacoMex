@@ -70,11 +70,8 @@ const user= JSON.parse(JSON.stringify(usuarioResponse))
       const com = bcrypt.compareSync(password, contrasena);
       if (com && id_usuario_cli=="23") {
        
-        const id_cliente=user["id_cliente"];
-        const sessionRegistro= await SesionModel.create({id_cliente},{raw:true})
-        req.session.user2=user._id;
-
-        const data={httpCode:0,user}
+      
+        const data={httpCode:0}
         res.render('index',data);
 
       } else if (com && id_usuario_cli=="35") {
