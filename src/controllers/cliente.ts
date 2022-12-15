@@ -128,24 +128,24 @@ export async function createCliente(req: Request, res: Response) {
     });
 
 
-    const mailer = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
-      auth: {
-        user: 'tacomex.local@gmail.com',
-        pass: 'nwwtqvdiujccidrz'
-      }
-    })
+    // const mailer = nodemailer.createTransport({
+    //   host: "smtp.gmail.com",
+    //   port: 465,
+    //   secure: true,
+    //   auth: {
+    //     user: 'tacomex.local@gmail.com',
+    //     pass: 'nwwtqvdiujccidrz'
+    //   }
+    // })
 
-    await mailer.sendMail({
-      from: ' <tacomex.local@gmail.com>', // sender address
-      to: email, // list of receivers
-      subject: "Registro en tacomex", // Subject line
-      text: "BIENVENIDOOO", // plain text body
-      html: "<b>Hola, te registrado en tacomex con el siguiente email: </b>" + email + ' tu contraseña es: ' + passwordBCRYPT, // html body 
+    // await mailer.sendMail({
+    //   from: ' <tacomex.local@gmail.com>', // sender address
+    //   to: email, // list of receivers
+    //   subject: "Registro en tacomex", // Subject line
+    //   text: "BIENVENIDOOO", // plain text body
+    //   html: "<b>Hola, te registrado en tacomex con el siguiente email: </b>" + email + ' tu contraseña es: ' + passwordBCRYPT, // html body 
 
-    })
+    // })
 
     indexViewDireccion(req, res)
     //res.status(201).json();  

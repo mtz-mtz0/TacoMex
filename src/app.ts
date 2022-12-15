@@ -27,7 +27,7 @@ class Application{
         this.middlewares();
         //definir rutas
         this.routes();
-        // this.global();
+        this.global();
      //   dotenv.config();
 // require('dotenv').config({path:'./.env'});
 
