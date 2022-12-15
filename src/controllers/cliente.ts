@@ -124,7 +124,7 @@ export async function createCliente(req: Request, res: Response) {
   try {
     await ClienteModel.create({
       nombre_cli, apellidoP_cli, apellidoM_cli, sexo_cli,
-      fecha_nac, telefono, id_usuario_cli:"1", email, password
+      fecha_nac, telefono, id_usuario_cli, email, password
     });
 
 
