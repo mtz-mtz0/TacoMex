@@ -14,6 +14,7 @@ import { SesionModel } from "../models/sesion.model";
 
 
 
+//pruba
 
 
 export async function indexViewCliente(req: Request, res: Response) {
