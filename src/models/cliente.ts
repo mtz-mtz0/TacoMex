@@ -7,7 +7,8 @@ import {PedidoModel} from "./pedido";
 import { UsuarioModel } from "./usuario";
 import {TablaProducto } from "./productos";
 import {} from "./productos";
-//export class ClienteModel extends Model<ClienteType>{}
+//export class ClienteModel extends Model<ClienteType>{} otro
+
 
 /**
  * Tabla clientes
