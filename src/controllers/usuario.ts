@@ -5,7 +5,7 @@ import { UsuarioModel } from "../models/usuario";
 
 
   export async function indexViewUsuario(req: Request, res: Response) {
-    return res.render('../views/usuario/usuario-view');
+    return res.render('../views/Usuario/usuario-view');
   }
 
 
