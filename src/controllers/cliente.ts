@@ -130,8 +130,8 @@ export async function createCliente(req: Request, res: Response) {
       port: 465,
       secure: true,
       auth: {
-        user: 'tacomex.local@gmail.com',
-        pass: 'nwwtqvdiujccidrz'
+        user: 'tacomex12345@gmail.com',
+        pass: 'vltwqhouwmwxcpfw'
       }
     })
 
